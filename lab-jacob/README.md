@@ -1,17 +1,9 @@
-# 26-Lab Front-end tooling React
+# 31-Lab Redux
+ ###
 
-After installing the dependecies necessary for using React, Babel and webpack creating that actual app needed also installing cowsay. 
-
-To add in the ability to change the cow the dynamic state from the constructor was added to the property of the cowsay function for
  ```
-cow : ''
+
  ``` 
-
-then wrote a function that would handle the state change onclick of the button.
-
->  changeCowState(){
-    (this.setState({animal : say.DRAGON})) ? this.setState({animal : say.DEFAULT}) : this.setState({animal : say.DRAGON}) 
-  }
 
 
 * **List of Dependecies** 
@@ -39,7 +31,8 @@ then wrote a function that would handle the state change onclick of the button.
 * **JavaScript**
 * **React**
 * **Babel**
-* **
+* **Redux**
+* **Webpack**
 
 ## Authors
 
