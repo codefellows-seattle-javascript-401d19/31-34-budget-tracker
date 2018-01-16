@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
       categories, 
       categoryCreate,
       categoryUpdate,
-      categoryRemove,
+      categoryDestroy,
     } = this.props;
 
     return (
@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
           categories.map((category, index) => 
             <div key={index}>
               <h2>{category.name}</h2>
-              <button onClick={() => categoryRemove(category)}>delete</button>
+              <button onClick={() => categoryDestroy(category)}>delete</button>
               <CategoryForm category={category} onComplete={categoryUpdate} />
             </div>
           )
@@ -39,7 +39,7 @@ let mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (data) => dispatch(category.createAction(data)),
     categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
+    categoryDestroy: (data) => dispatch(category.destroyAction(data)),
   };
 };
 

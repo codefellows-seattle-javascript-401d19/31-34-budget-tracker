@@ -15,7 +15,7 @@ export const updateAction = (category) => ({
   payload: category,
 });
 
-export const removeAction = (category) => ({
+export const destroyAction = (category) => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
