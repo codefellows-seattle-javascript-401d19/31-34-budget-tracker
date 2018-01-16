@@ -25,7 +25,7 @@ class SectionForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.onComplete(this.state);
+    this.props.handleComplete(this.state);
     this.setState(emptyState);
   }
 

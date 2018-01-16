@@ -6,9 +6,9 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './component/app';
-import sectionsReducer from './reducer/sections';
+import categorysReducer from './reducer/categorys';
 
-let store = createStore(sectionsReducer);
+let store = createStore(categorysReducer);
 // console.log(store);
 //-------------
 // Nicholas - state displayer from lecture
@@ -19,7 +19,7 @@ store.subscribe(() => {
 //-------------
 
 const container = document.createElement('div');
-document.body.  appendChild(container);
+document.body.appendChild(container);
 
 ReactDom.render(
   <Provider store = {store}>
