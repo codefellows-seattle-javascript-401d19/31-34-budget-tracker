@@ -1,7 +1,7 @@
 
 // create 
 export const createAction = ({title}) => ({
-  type : 'SECTION_CREATE',
+  type : 'CATEGORY_CREATE',
   payload : {
     title,
     id: Math.random(),
@@ -10,13 +10,13 @@ export const createAction = ({title}) => ({
 });
 
 // update 
-export const updateAction = (section) => ({
-  type : 'SECTION_UPDATE',
-  payload : section,
+export const updateAction = (category) => ({
+  type : 'CATEGORY_CREATE',
+  payload : category,
 });
 
 // remove
-export const removeAction = (section) => ({
-  type : 'SECTION_REMOVE',
-  payload : section,
+export const removeAction = (category) => ({
+  type : 'CATEGORY_CREATE',
+  payload : category,
 });

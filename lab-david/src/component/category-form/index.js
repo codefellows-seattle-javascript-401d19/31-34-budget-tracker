@@ -1,4 +1,3 @@
-//  inside component = sectionForm.js
 
 import React from 'react';
 
@@ -6,10 +5,10 @@ let emptyState = {
   title : '',
 };
 
-class SectionForm extends React.Component{
+class CategoryForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.section || emptyState;
+    this.state = this.props.category || emptyState;
   
     // insert binding function here
 
@@ -32,17 +31,17 @@ class SectionForm extends React.Component{
   // hoooks
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.section)
-      this.setState(nextProps.section);
+    if(nextProps.category)
+      this.setState(nextProps.category);
   }
 
   render(){
-    let buttonText = this.props.section ? 'update' : 'create section';
+    let buttonText = this.props.category ? 'update' : 'create category';
 
     return(
       <form
       onSubmit={this.handleSubmit}
-      className='section-form'>
+      className='category-form'>
 
       <input
         type='text'
@@ -58,4 +57,4 @@ class SectionForm extends React.Component{
   }
 };
 
-export default SectionForm;
+export default CategoryForm;
