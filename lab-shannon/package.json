@@ -1,4 +1,5 @@
-{  "jest": {
+{
+  "jest": {
     "moduleNameMapper": {
       "\\.(svg|eof|ttf|woff|woff2|scss|gif)$": "<rootDir>/src/__test__/mock-asset.js"
     }
