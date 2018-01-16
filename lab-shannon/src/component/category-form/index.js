@@ -14,10 +14,18 @@ class CategoryForm extends React.Component{
   }
 
   handleChange(event){
+    let {name, value} = event.target;
+    this.setState({name : value});
   }
 
   onSubmit(event){
     event.preventDefault();
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.category){
+      this.setState(nextProps.category);
+    }
   }
 
   render(){
@@ -26,9 +34,17 @@ class CategoryForm extends React.Component{
       <form onSubmit={this.onSubmit}>
         <input
           type='text'
-          name='title'
-          value={this.state.title}
-          placeholder='title'
+          name='label'
+          value={this.state.label}
+          placeholder='label'
+          onChange={this.handleChange}
+        />
+        <input
+          type='number'
+          step='.01'
+          name='budget'
+          value={this.state.budget}
+          placeholder='budget'
           onChange={this.handleChange}
         />
         <button type='submit'> {buttonText} </button>

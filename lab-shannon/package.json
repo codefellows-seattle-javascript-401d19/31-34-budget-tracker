@@ -4,7 +4,9 @@
   "description": "budget tracker",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest -i --coverage",
+    "watch": "webpack-dev-server --inline --hot",
+    "build": "webpack"
   },
   "author": "shannon",
   "license": "MIT",
