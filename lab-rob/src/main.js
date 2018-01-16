@@ -8,7 +8,11 @@ import categoryReducer from './reducer/category';
 
 let store = createStore(categoryReducer);
 
-let container = document.createElement('div');
+store.subscribe(() => {
+  console.log('__STATE__', store.getState());
+});
+
+const container = document.createElement('main');
 document.body.appendChild(container);
 
 ReactDOM.render(
