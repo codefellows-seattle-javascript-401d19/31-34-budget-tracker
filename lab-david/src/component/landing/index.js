@@ -1,9 +1,8 @@
-// inside landing folder = index.js
 
 import React from 'react';
 import {connect} from 'react-redux';
 import * as category from '../../action/category';
-import CategoryForm from './category-form';
+import CategoryForm from '../category-form';
 
 class Landing extends React.Component{
   render(){
@@ -20,7 +19,8 @@ class Landing extends React.Component{
         {
           categories.map((category, index) => 
             <div key={index}>
-              <h2> {category.title} </h2>
+              <h2> {category.name} </h2>
+              <p> {category.budgettotal} </p>
               <button onClick={() => categoryCreate(category)}> delete </button> 
               <categoryForm category={category} onComplete={categoryUpdate} />
             </div>
@@ -35,7 +35,7 @@ class Landing extends React.Component{
 
 let mapStateToProps = (state) => {
   return{
-    cats : 'Gregor and The Hound',
+    // randomObj : 'String',
     categories : state,
   }
 };

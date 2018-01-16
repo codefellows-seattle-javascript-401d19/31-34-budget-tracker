@@ -2,7 +2,7 @@
 import React from 'react';
 
 let emptyState = {
-  title : '',
+  name : '',
 };
 
 class CategoryForm extends React.Component{
@@ -10,16 +10,28 @@ class CategoryForm extends React.Component{
     super(props);
     this.state = this.props.category || emptyState;
   
-    // insert binding function here
-
+   //-------------------------------------------------------------
+    // Binding Handlers
+    //-------------------------------------------------------------
+    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    for(let functionName of memberFunctions){
+      if(functionName.startsWith('handle')){
+        this[functionName] = this[functionName].bind(this);
+      }
+    }
   }
 
 
   // member functions
 
-  handleChange(event){
+  handleNameChange(event){
     let {value} = event.target;
-    this.setState({ title : value });
+    this.setState({ name : value });
+  }
+
+  handleBudgetChange(event){
+    let {value} = event.target;
+    this.setState({ budgetTotal : value });
   }
 
   handleSubmit(event){
@@ -45,11 +57,21 @@ class CategoryForm extends React.Component{
 
       <input
         type='text'
-        name='title'
-        placeholder='title'
-        value={this.state.title}
-        onChange={this.handleChange}
+        name='name'
+        placeholder='Category Name'
+        value={this.state.name}
+        onChange={this.handleNameChange}
       />
+
+
+      <input
+        type='number'
+        name='budget-total'
+        placeholder='Budget Total'
+        value={this.state.budgetTotal}
+        onChange={this.handleBudgetChange}
+      />
+      
 
       <button type='submit'> {buttonText} </button>
       </form>

@@ -1,11 +1,14 @@
 
+const uuidv1 = require('uuid/v1');
+
 // create 
-export const createAction = ({title}) => ({
+export const createAction = ({name}) => ({
   type : 'CATEGORY_CREATE',
   payload : {
-    title,
-    id: Math.random(),
-    createdOn: new Date(), 
+    name,
+    budgetTotal,
+    id: uuidv1(),
+    timeStamp: new Date(), 
   }
 });
 
