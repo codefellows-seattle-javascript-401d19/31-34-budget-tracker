@@ -5,9 +5,10 @@ export default (state = emptyState, {type, payload}) => {
     case 'CATEGORY_CREATE':
       return [...state, payload];
     case 'CATEGORY_UPDATE':
-      return state.map(category  => category.id === payload.id ? payload : category);
+      return state.map(category => category.id === payload.id ? payload : category);
     case 'CATEGORY-DESTROY':
       return state.filter(category => category.id !== payload.id);
-    default: state;
+    default: 
+      return state;
   }
 };

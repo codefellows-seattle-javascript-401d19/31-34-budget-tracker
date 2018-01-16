@@ -1,7 +1,7 @@
 import React from 'react';
 
 let emptyState = {
-  title: '',
+  name: '',
 };
 
 class CategoryForm extends React.Component {
