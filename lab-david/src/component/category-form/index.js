@@ -3,6 +3,7 @@ import React from 'react';
 
 let emptyState = {
   name : '',
+  budgetTotal : '',
 };
 
 class CategoryForm extends React.Component{

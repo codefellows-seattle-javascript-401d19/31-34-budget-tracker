@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import * as category from '../../action/category';
 import CategoryForm from '../category-form';
 
-class Landing extends React.Component{
+class Dashboard extends React.Component{
   render(){
     let {
       categories,
@@ -14,15 +14,15 @@ class Landing extends React.Component{
     } = this.props;
 
     return(
-      <div className='landing'>
+      <div className='dashboard'>
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category, index) => 
             <div key={index}>
-              <h2> {category.name} </h2>
-              <p> {category.budgettotal} </p>
-              <button onClick={() => categoryCreate(category)}> delete </button> 
-              <categoryForm category={category} onComplete={categoryUpdate} />
+              <h2> Category: {category.name} </h2>
+              <p> Category Budget: {category.budgetTotal} </p>
+              <button onClick={() => categoryRemove(category)}> delete </button> 
+              <CategoryForm category={category} onComplete={categoryUpdate} />
             </div>
           )}
       </div>
@@ -52,4 +52,4 @@ let mapDispatchToProps = (dispatch) => {
 
 // this connects the above two functions to the store
 // takes original function and renames it as Landing (curried function)
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
