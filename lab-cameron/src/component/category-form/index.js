@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import uuidv1 from 'uuid/v1';
 
 const emptyState = {
-  id: uuidv1(),
-  timestamp: new Date(),
   name: '',
   budget: 0,
 };
