@@ -1,8 +1,12 @@
-{
+{  "jest": {
+    "moduleNameMapper": {
+      "\\.(svg|eof|ttf|woff|woff2|scss|gif)$": "<rootDir>/src/__test__/mock-asset.js"
+    }
+  },
   "name": "src",
   "version": "1.0.0",
   "description": "budget tracker",
-  "main": "main.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "jest -i --coverage",
     "watch": "webpack-dev-server --inline --hot",
