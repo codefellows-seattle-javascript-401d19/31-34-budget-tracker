@@ -1,5 +1,5 @@
 {
-  "name": "Redux budget app",
+  "name": "Redux-budget-app",
   "version": "1.0.0",
   "description": "401 JS - Lab 31 Budget Tracker",
   "main": "webpack.config.js",

@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import CategoryForm from "../category-form";
+import CategoryItem from "../category-item";
 import * as category from '../../action/category';
 
 class Dashboard extends React.Component {
@@ -18,9 +20,11 @@ class Dashboard extends React.Component {
         <CategoryForm onComplete={categoryCreate} />
         <div className="categories">
           {categories.map((category, index) => (
-            <NoteItem 
+            <CategoryItem 
               key={index} 
-              category={category} 
+              category={category}
+              destroyCategory={categoryDestroy} 
+              updateCategory={categoryUpdate}
             />
           ))}
         </div>
@@ -30,7 +34,9 @@ class Dashboard extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-  return {categories:state}
+  return {
+    categories:state
+  }
 };
 
 let mapDispatchToProps = (dispatch) => {

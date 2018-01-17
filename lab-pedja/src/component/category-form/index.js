@@ -2,13 +2,13 @@ import React from "react";
 
 let emptyState = {
   name: '',
-  budget: 0
+  budget: '',
 }
 
 class CategoryForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.category || emptyState;
+    this.state = this.props.category ? this.props.category : emptyState;
 
     let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
     for(let functionName of memberFunctions){
@@ -60,7 +60,7 @@ class CategoryForm extends React.Component {
           onChange={this.handleChange}
         />
         <input
-          type="number"
+          type="text"
           name="budget"
           placeholder="$ 0"
           value={this.state.budget}

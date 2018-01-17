@@ -7,14 +7,14 @@ import CategoryForm from "../category-form";
 
 class CategoryItem extends React.Component {
   render() {
-    let {category, categoryRemove, categoryUpdate} = this.props;
+    let {category, categoryDestroy, categoryUpdate} = this.props;
 
     return (
       <div className="category-item">
         <CategoryForm onComplete={categoryUpdate} category={category}/>
         <p><strong>Category name: </strong>{category.name}</p>
         <p><strong>Budget $: </strong>{category.budget}</p>
-        <button onClick={categoryRemove.bind(null, note)}>Delete</button>
+        <button onClick={categoryDestroy.bind(null, category)}>Delete</button>
       </div>
     )
   }
