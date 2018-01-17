@@ -15,11 +15,14 @@ class CategoryForm extends React.Component{
 
   handleChange(event){
     let {name, value} = event.target;
-    this.setState({name : value});
+    this.setState({[name]: value});
   }
 
   onSubmit(event){
     event.preventDefault();
+    console.log(this.state);
+    this.props.onComplete(this.state);
+    this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps){
@@ -34,7 +37,7 @@ class CategoryForm extends React.Component{
       <form onSubmit={this.onSubmit}>
         <input
           type='text'
-          name='label'
+          name='title'
           value={this.state.label}
           placeholder='label'
           onChange={this.handleChange}

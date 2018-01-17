@@ -1,11 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import CategoryForm from '../category-form';
 
 class CategoryItem extends React.Component{
 
   render(){
     return(
-      <button onClick={}> Delete </button>
-    )
+      <div>
+        <h4>{this.props.category.title}</h4>
+        <p>{this.props.category.budget}</p>
+        <button> Delete </button>
+        <CategoryForm />
+      </div>
+    );
   }
 }
+
+export default CategoryItem;

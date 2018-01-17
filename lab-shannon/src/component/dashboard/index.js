@@ -1,11 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
+import * as category from '../../action/category';
 
 class Dashboard extends React.Component{
   render(){
+    let {
+      categories,
+      categoryCreate,
+      categoryUpdate,
+      categoryDestroy,
+    } = this.props;
+
     return(
-      <CategoryForm />
+      <div>
+        <CategoryForm onComplete={categoryCreate}/>
+        <CategoryItem category={category}/>
+      </div>
     );
   }
 }
@@ -13,11 +25,12 @@ class Dashboard extends React.Component{
 let mapStateToProps = (state) => {
   return {categories : state};
 };
+
 let mapDispatchToProps = (dispatch) => {
   return {
-    // categoryCreate:
-    // categoryUpdate:
-    // categoryDestroy:
+    categoryCreate: (data) => {dispatch(category.create(data));},
+    categoryUpdate: (data) => {dispatch(category.update(data));},
+    categoryDestroy: (data) => {dispatch(category.destroy(data));},
   };
 };
 
