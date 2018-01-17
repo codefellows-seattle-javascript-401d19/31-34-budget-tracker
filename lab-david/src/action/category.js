@@ -9,7 +9,7 @@ export const createAction = ({name, budgetTotal}) => ({
     budgetTotal,
     id: uuidv1(),
     timeStamp: new Date(), 
-  }
+  },
 });
 
 // update 
