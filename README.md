@@ -14,7 +14,7 @@
 Your lab directory must include  
 * **README.md** -- with a documention about your lab
 * **.babelrc** -- with all dependencies and dev-dependencies 
-* **.eslintrc** -- with the class .eslintrc file
+* **.eslintrc.json** -- with the class .eslintrc.json file
 * **.gitignore** -- with a robust gitignore
 * **.eslintignore** -- with the class .eslintignore
 * **package.json** -- with all dependencies and dev-dependencies 
@@ -35,14 +35,14 @@ Your lab directory must include
 
 #### redux
 ###### reducer
-* create a category reducer in your your reducer direcoty
+* create a category reducer in your your reducer directory
 * this reducer should support the following interactions 
   * `CATEGORY_CREATE`
   * `CATEGORY_UPDATE`
   * `CATEGORY_DESTORY`
 
-###### action creators
-* you should create an action createor for each interaction supported by your category reducer
+###### action creaters
+* you should create an action creater for each interaction supported by your category reducer
 
 #### Components
 Create the following components and structure them according to the following diagram.  
@@ -51,9 +51,9 @@ Provider
   App 
     BrowserRouter
       Route / Dashboard
-        CategoryForm -- for creating categorys
-        [Category Item]
-           CategoryForm  -- for updating categorys
+        CategoryForm -- for creating categories
+        [CategoryItem]
+           CategoryForm  -- for updating categories
 ```
 
 ###### App Component 
@@ -67,12 +67,12 @@ The App component should setup the single page applicaion routes
 
 ###### CategoryForm Component
 * should expect an `onComplete` prop to be a function
-  * that function should be invoked with the CategoryForms State when the form is submited
-* should support and optional `category` prop that will initialize the state of the form
+  * that function should be invoked with the CategoryForms State when the form is submitted
+* should support an optional `category` prop that will initialize the state of the form
 
 ###### CategoryItem Component
 * should display the category's name and budget
-* should recive a category prop from Dashbaord
+* should receive a category prop from Dashboard
 * should display a delete button
   * `onClick` the category should be removed from the application state
 * should display a CategoryForm  
