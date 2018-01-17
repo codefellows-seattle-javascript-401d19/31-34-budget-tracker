@@ -15,11 +15,14 @@ class Dashboard extends React.Component{
 
     return(
       <div className='dashboard'>
+        <div className='dashboard-banner'>
+        </div>
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category, index) => 
-            <div key={index}>
-              <h2> Category: {category.name} </h2>
+            <div key={index} className='category'>
+              
+              <h3> Category: {category.name} </h3>
               <p> Category Budget: {category.budgetTotal} </p>
               <button onClick={() => categoryRemove(category)}> delete </button> 
               <CategoryForm category={category} onComplete={categoryUpdate} />

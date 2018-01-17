@@ -8,6 +8,8 @@ import {Provider} from 'react-redux';
 import App from './component/app';
 import categoriesReducer from './reducer/categories';
 
+import './style/main.scss';
+
 let store = createStore(categoriesReducer);
 
 // displaying state : 
