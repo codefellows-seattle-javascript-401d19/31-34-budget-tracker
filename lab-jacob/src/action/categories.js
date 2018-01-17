@@ -1,7 +1,7 @@
 import uuidv1 from 'uuid/v1'
 
 export const createAction = ({name, budget}) => ({
-  type: 'CATERGORY_CREATE',
+  type: 'CATEGORY_CREATE',
   payload: {
     name,
     budget,
