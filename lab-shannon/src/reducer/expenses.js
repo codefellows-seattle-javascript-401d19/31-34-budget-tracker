@@ -4,6 +4,16 @@ export default (state = emptyState, action) => {
   let {type, payload} = action;
   let categoryID, categoryExpenseList, updatedExpenseList;
   switch(type){
+    //for category cases the payload is the *category* object; state is ** state
+    case 'CATEGORY_CREATE': {
+      //if a category is created, make a new key:value pair in the expenses object
+      return {...state, [payload.id] : []};
+    }
+    case 'CATEGORY_DESTROY': {
+      let updatedState = {...state};
+      delete updatedState[payload.id];
+      return updatedState;
+    }
     case 'EXPENSE_CREATE':{
       categoryID = payload.categoryID;
       categoryExpenseList = state[categoryID];
