@@ -36,7 +36,7 @@ class CategoryForm extends Component {
   render() {
     const buttonText = this.props.category ? 'update category' : 'create category';
     return (
-      <form className='category-form' onSubmit={this.handleSubmit}>
+      <form id='main-form' className='category-form' onSubmit={this.handleSubmit}>
         <input
           type='text'
           name='name'
@@ -44,6 +44,7 @@ class CategoryForm extends Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
+        <br/>
         <input
           type='text'
           name='budget'
@@ -51,6 +52,7 @@ class CategoryForm extends Component {
           value={this.state.budget}
           onChange={this.handleChange}
         />
+        <br/>
         <button type='submit'>{ buttonText }</button>
       </form>
     );

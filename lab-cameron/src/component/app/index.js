@@ -7,6 +7,7 @@ const App = () => {
     <div className='app'>
       <BrowserRouter>
         <div>
+          <h1 id='headline'>Budget Tracker</h1>
           <Route exact path='/' component={Dashboard} />
         </div>
       </BrowserRouter>
