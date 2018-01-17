@@ -12,6 +12,10 @@ import './style/main.scss';
 
 let store = createStore(categoriesReducer);
 
+// // displaying state : 
+// store.subscribe(() => {
+//   console.log('__STATE__', store.getState())
+// });
 
 const container = document.createElement('div');
 document.body.appendChild(container);
