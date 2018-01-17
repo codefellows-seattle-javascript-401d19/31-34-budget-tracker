@@ -1,8 +1,8 @@
-# Codefellows javascript 401 lab 28-29 - REACT Routing/ Components/ Modal - ToDo list
+# Codefellows javascript 401 lab 31 - REACT Redux - Categories
 
 ## Purpose
 
-Learn to use react, webpack, and related technologies by creating an API which allows a user to create a To Do list with a title and content. All the items are displayed in a list. Each item has a button that allows the user to delete it and a button that allows the user to edit the item. (Doubleclicking the item also invokes edit.) Edit brings up a modal window that allows the user to edit and save the item.
+Learn to use React with Redux by creating an API which allows a user to create an expense category with a name and budget. All the items are displayed in a list. Each item has a button that allows the user to delete it and a button that allows the user to edit the item. 
 
 ## To use
 
@@ -12,7 +12,7 @@ Run webpack dev server:
 `npm run watch`
 Open your browser at localhost:8080.
 
-Type a title for your ToDo item into the Title box. Enter a description of your item into the Content Box. Click submit.
+Type a name for your category into the name box. Enter a budget for your item into the $0.00 box. Click Create Category.
 
 The item will be added to a list below the entry form. Click the delete button to delete a To Do item.
 
@@ -21,9 +21,6 @@ The item will be added to a list below the entry form. Click the delete button t
 React - https://reactjs.org
 Babel - https://babeljs.io
 Webpack - https://webpack.js.org
-Superagent - https://visionmedia.github.io/superagent/
+Redux - https://redux.js.org/
 
-## Dev Dependencies
 
-Jest - https://facebook.github.io/jest/
-Enzyme - https://www.npmjs.com/package/enzyme
