@@ -1,3 +1,5 @@
+import './landing.scss';
+
 import React from 'react';
 
 class Landing extends React.Component {
