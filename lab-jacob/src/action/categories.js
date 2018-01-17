@@ -1,11 +1,11 @@
-import uuidv2 from 'uuidv2'
+import uuidv1 from 'uuid/v1'
 
 export const createAction = ({name, budget}) => ({
   type: 'CATERGORY_CREATE',
   payload: {
     name,
     budget,
-    id: uuidv2(),
+    id: uuidv1(),
     createdOn: new Date(),
   }
 })

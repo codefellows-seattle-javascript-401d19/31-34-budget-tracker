@@ -1,4 +1,4 @@
 {
-  "presets": ["env", "react", "stage-0"],
-  "plugins": ["transform-object-rest-spread", "transform-async-to-generator", "syntax-async-functions"]
+  "presets" : ["env","react"],
+  "plugins" : ["transform-object-rest-spread"]
 }
