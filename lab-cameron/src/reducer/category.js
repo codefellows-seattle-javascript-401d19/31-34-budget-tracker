@@ -1,7 +1,7 @@
 const emptyState = [];
 
 export default (state = emptyState, { type, payload }) => {
-  switch(type) {
+  switch (type) {
     case 'CATEGORY_CREATE':
       return [...state, payload];
     case 'CATEGORY_UPDATE':

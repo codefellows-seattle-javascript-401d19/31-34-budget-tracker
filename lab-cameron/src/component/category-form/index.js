@@ -3,16 +3,17 @@ import uuidv1 from 'uuid/v1';
 
 const emptyState = {
   name: '',
-  budget: 0,
+  budget: '',
 };
 
 class CategoryForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.category || emptyState;
+    this.state = this.props.category ? this.props.category : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -40,12 +41,14 @@ class CategoryForm extends Component {
           type='text'
           name='name'
           placeholder='name'
+          value={this.state.name}
           onChange={this.handleChange}
         />
         <input
           type='text'
           name='budget'
           placeholder='budget'
+          value={this.state.budget}
           onChange={this.handleChange}
         />
         <button type='submit'>{ buttonText }</button>
