@@ -1,7 +1,7 @@
 import React from 'react';
 
 let emptyState = {
-  title: '',
+  label: '',
   budget: 0,
 };
 
@@ -36,7 +36,7 @@ class CategoryForm extends React.Component{
       <form onSubmit={this.onSubmit}>
         <input
           type='text'
-          name='title'
+          name='label'
           value={this.state.label}
           placeholder='label'
           onChange={this.handleChange}

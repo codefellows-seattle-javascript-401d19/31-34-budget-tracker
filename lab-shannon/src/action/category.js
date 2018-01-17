@@ -1,9 +1,9 @@
 let uuid = require('uuid/v1');
 
-export const create = ({title, budget}) => ({
+export const create = ({label, budget}) => ({
   type: 'CATEGORY_CREATE',
   payload: {
-    title,
+    label,
     budget,
     id: uuid(),
     timestamp: new Date(),
