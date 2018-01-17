@@ -8,32 +8,32 @@
 ## Requirements  
 #### Feature Tasks 
 ##### expense
-* in this app a expense should contain at least the following propertys
+* in this app an expense should contain at least the following properties
   * `id` a uuid
   * `categoryID` an id that corresponds to an existing category
   * `timestamp` a date from when the category was created
   * `name` a string that is the name of the expense
   * `price` a number that is the price of the expense 
-  * fell free to add more to your expense if you want
+  * feel free to add more to your expense if you want
 
 ##### redux
 ###### app reducer
-* export a reducer that hols the entire app state from `reducer/index.js`
-* create a reducer that will combine you `categories` reducer and `expenses` reducer
+* export a reducer that holds the entire app state from `reducer/index.js`
+* create a reducer that will combine your `categories` reducer and `expenses` reducer
 
 ###### expenses reducer
 * create a category reducer in your your reducer directory
-* this reducer should atleast support the following interactions 
+* this reducer should at least support the following interactions 
   * `EXPENSE_CREATE` -- store an expense
   * `EXPENSE_UPDATE` -- update an existing expense
   * `EXPENSE_DELETE` -- delete an existing expense
 * if you need others feel free to add them
 
-###### action creators
-* you should create an action createor for each interaction supported by your expenses reducer
+###### action creaters
+* you should create an action creater for each interaction supported by your expenses reducer
 
 ###### store
-* in `lib/store.js` export a function  that will return a redux store from your app reducer
+* in `lib/store.js` export a function that will return a redux store from your app reducer
 
 ##### Components
 Create the following components and structure them according to the following diagram.  
@@ -42,9 +42,9 @@ Provider
   App
     BrowserRouter
       Route / Dashboard
-        CategoryForm -- for creating categorys
-        [Category Item] -- list of Category items
-           CategoryForm  -- for updating categorys
+        CategoryForm -- for creating categories
+        [CategoryItem] -- list of Category items
+           CategoryForm  -- for updating categories
            ExpenseForm -- for creating expenses
            [ExpenseItem]  -- list of expense items
               ExpenseForm -- for updating an expense
