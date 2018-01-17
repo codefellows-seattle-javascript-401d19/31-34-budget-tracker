@@ -24,7 +24,7 @@ class Landing extends React.Component {
     return (
       <div className='landing'>
         <h2>{this.state.date.toLocaleTimeString()}</h2>
-        <p><em>Time</em> to tack your budget!</p>
+        <p><em>Time</em> to track your budget!</p>
       </div>
     );
   }

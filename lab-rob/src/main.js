@@ -12,7 +12,7 @@ store.subscribe(() => {
   console.log('__STATE__', store.getState());
 });
 
-let container = document.createElement('div');
+let container = document.createElement('main');
 document.body.appendChild(container);
 
 ReactDOM.render(

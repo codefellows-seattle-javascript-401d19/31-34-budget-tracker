@@ -3,7 +3,7 @@ import autoBind from '../../lib/auto-bind';
 
 let emptyState = {
   name: '',
-  budget: 0,
+  budget: '',
 };
 
 class CategoryForm extends React.Component {
@@ -38,8 +38,22 @@ class CategoryForm extends React.Component {
 
     return (
       <form className='category-form' onSubmit={this.handleSubmit}>
-        <input type='text' name='name' placeholder='Category name...' value={this.state.name} onChange={this.handleChange} />
-        <input type='number' name='budget' placeholder='Budget...' value={this.state.budget} onChange={this.handleChange} />
+        <input 
+          type='text'
+          name='name'
+          placeholder='Category name...'
+          value={this.state.name}
+          onChange={this.handleChange}
+          required='required' />
+
+        <input
+          type='number'
+          name='budget'
+          placeholder='Budget...'
+          value={this.state.budget}
+          onChange={this.handleChange} 
+          required='required' />
+
         <button type='submit'>{buttonText}</button>
       </form>
     );

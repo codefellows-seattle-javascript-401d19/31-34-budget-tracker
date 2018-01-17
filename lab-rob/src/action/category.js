@@ -19,3 +19,7 @@ export const destroyAction = category => ({
   type: 'CATEGORY_DESTROY',
   payload: category,
 });
+
+export const clearAction = () => ({
+  type: 'CATEGORY_CLEAR',
+});
