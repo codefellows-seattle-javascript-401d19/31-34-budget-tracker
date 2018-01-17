@@ -2,15 +2,18 @@
 
 import React from 'react';
 import ReactDom from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './component/app';
 import categoriesReducer from './reducer/categories';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 import './style/main.scss';
 
-let store = createStore(categoriesReducer);
+let middleware = {};
+const store = createStore(categoriesReducer,composeWithDevTools(applyMiddleware(...middleware)
+));
 
 const container = document.createElement('div');
 document.body.appendChild(container);
