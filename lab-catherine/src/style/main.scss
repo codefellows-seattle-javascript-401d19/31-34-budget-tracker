@@ -92,14 +92,14 @@ button:hover {
   color: $color-landing;
 }
 
-.note-form {
+.note-form, .new-item {
   background-Color: goldenRod;
   padding: 20px 10px;
   border-radius: $edges;
 }
 
-.note-item {
-  background-color: $color-tertiary;
+.note-item, form {
+  background-color: $color-landing;
   padding: 40px 20px;
   border-radius: $edges;
   color: $color-landing;

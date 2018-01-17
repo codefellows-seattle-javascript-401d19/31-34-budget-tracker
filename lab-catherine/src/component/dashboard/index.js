@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
 import * as category from '../../action/category';
 
 class Dashboard extends React.Component {
@@ -18,9 +19,11 @@ class Dashboard extends React.Component {
         {
           categories.map((category, index) => 
             <div key={index}>
-              <h2>{category.name}</h2>
-              <button onClick={() => categoryDestroy(category)}>delete</button>
-              <CategoryForm category={category} onComplete={categoryUpdate} />
+              <CategoryItem
+                category={category}
+                categoryUpdate={categoryUpdate}
+                categoryDestroy={categoryDestroy}
+              />
             </div>
           )}
       </div>
