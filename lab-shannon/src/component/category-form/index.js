@@ -9,8 +9,6 @@ class CategoryForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.category ? this.props.category : emptyState;
-    console.log(this.props, `props in form`);
-    console.log(this.state, `state in form`);
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
