@@ -15,8 +15,15 @@ class Dashboard extends React.Component {
     
     return (
       <div className="dashboard">
-        {/* TODO: Add CategoryForm and map */}
-
+        <CategoryForm onComplete={categoryCreate} />
+        <div className="categories">
+          {categories.map((category, index) => (
+            <NoteItem 
+              key={index} 
+              category={category} 
+            />
+          ))}
+        </div>
       </div>
     );
   }
