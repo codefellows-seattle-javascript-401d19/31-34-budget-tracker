@@ -7,7 +7,7 @@ import * as category from '../../action/category';
 class Dashboard extends React.Component{
   render(){
     let {
-      category,
+      categories,
       categoryCreate,
       categoryUpdate,
       categoryDestroy,
@@ -16,14 +16,14 @@ class Dashboard extends React.Component{
     return(
       <div>
         <CategoryForm onComplete={categoryCreate}/>
-        <CategoryItem categories={category}/>
+        <CategoryItem categories={categories} categoryDestroy={categoryDestroy} categoryUpdate={categoryUpdate}/>
       </div>
     );
   }
 }
 
 let mapStateToProps = (state) => {
-  return {category : state};
+  return {categories : state};
 };
 
 let mapDispatchToProps = (dispatch) => {

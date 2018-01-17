@@ -8,10 +8,10 @@ class CategoryItem extends React.Component{
       this.props.categories.map((category, index) => {
         return (
           <div key={index}>
-            <h4>{category.title}</h4>
-            <p>{category.budget}</p>
-            <button> Delete </button>
-            <CategoryForm />
+            <h4>Category Title: {category.title}</h4>
+            <p>Budget: ${category.budget}</p>
+            <button onClick={this.props.categoryDestroy}> Delete </button>
+            <CategoryForm category={category} onComplete={this.props.categoryUpdate}/>
           </div>
         );
       })
