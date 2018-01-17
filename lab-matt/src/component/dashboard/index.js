@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as expense from '../../action/expense';
-import ExpenseForm from '../expense-form';
-import ExpenseItem from '../expense-item';
+import * as category from '../../action/category';
+import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
 
 class Dashboard extends React.Component {
   render() {
-    let { expenses, expenseCreate } = this.props;
+    let { categories, categoryCreate } = this.props;
     return (
       <div className='dashboard'>
-        <ExpenseForm onComplete={expenseCreate} />
+        <CategoryForm onComplete={categoryCreate} />
         {
-          expenses.map((expense, index) => {
+          categories.map((category, index) => {
             return <div key={index}>
-              <ExpenseItem expense={expense} />
+              <CategoryItem category={category} />
             </div>;
           })
         }
@@ -24,13 +24,13 @@ class Dashboard extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    expenses: state,
+    categories: state,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    expenseCreate: (data) => dispatch(expense.createAction(data)),
+    categoryCreate: (data) => dispatch(category.createAction(data)),
   };
 };
 

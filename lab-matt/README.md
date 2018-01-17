@@ -4,7 +4,7 @@ Author: **Matthew LeBlanc** </br>
 Date: **01/16/18**
 
 ## Features
-This lab features an app that allows a user to track expenses, it uses redux to hold the appplication's state all in one location for easier access through the application.
+This lab features an app that allows a user to track expenses, sorted through categories. It uses redux to hold the appplication's state all in one location for easier access through the application.
 
 ## Tech/Framework Used
 - react

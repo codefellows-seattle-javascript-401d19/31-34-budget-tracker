@@ -5,15 +5,15 @@ let emptyState = {
   price: 0,
 };
 
-class ExpenseForm extends React.Component {
+class CategoryForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.expense || emptyState;
+    this.state = this.props.category || emptyState;
 
     this.handleChange = (event) => {
       let { name, value } = event.target;
-      if (name === 'price' && value.match(/^-?\d*(?:\.\d{0,2})?$/gm)) {
+      if (name === 'price' && value.match(/^-?\d*(\.\d{0,2})?$/gm)) {
 
         return this.setState({ [name]: value });
 
@@ -35,16 +35,16 @@ class ExpenseForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.expense) {
-      this.setState(nextProps.expense);
+    if (nextProps.category) {
+      this.setState(nextProps.category);
     }
   }
 
   render() {
-    let buttonText = this.props.expense ? 'update expense' : 'add expense';
+    let buttonText = this.props.category ? 'update category' : 'add category';
 
     return (
-      <form onSubmit={this.handleSubmit} className='expense-form'>
+      <form onSubmit={this.handleSubmit} className='category-form'>
         <input onChange={this.handleChange} type="text" name='title' placeholder='title' value={this.state.title} />
         <input onChange={this.handleChange} type="text" name='price' placeholder='price' value={this.state.price} />
         <button type='submit'> {buttonText} </button>
@@ -53,4 +53,4 @@ class ExpenseForm extends React.Component {
   }
 }
 
-export default ExpenseForm;
+export default CategoryForm;

@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 console.log('proof of life');
 
 import App from './component/app';
-import sectionsReducer from './reducer/sections.js';
+import categoryReducer from './reducer/categories.js';
 
-let store = createStore(sectionsReducer);
+let store = createStore(categoryReducer, composeWithDevTools());
 
 store.subscribe(() => {
   console.log('__STATE__', store.getState());
