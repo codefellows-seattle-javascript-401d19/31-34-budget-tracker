@@ -8,7 +8,7 @@ let emptyState = {
 class CategoryForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.category ? this.props.category : emptyState;
+    this.state = this.props.category || emptyState;
     this.handleChange = this.handleChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
