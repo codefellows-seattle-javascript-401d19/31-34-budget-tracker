@@ -25,7 +25,7 @@ const Dashboard = ({ categories, categoryCreate, categoryUpdate, categoryRemove 
 
 const mapStateToProps = state => {
   return {
-    categories: state,
+    categories: state.category,
   };
 };
 
