@@ -22,8 +22,7 @@ class Dashboard extends React.Component {
               <button onClick={() => categoryDestroy(category)}>delete</button>
               <CategoryForm category={category} onComplete={categoryUpdate} />
             </div>
-          )
-        }
+          )}
       </div>
     );
   }
