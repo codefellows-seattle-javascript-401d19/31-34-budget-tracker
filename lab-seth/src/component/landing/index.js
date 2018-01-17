@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 import * as category from '../../action/category';
+import './landing.scss';
 
 class Landing extends React.Component{
   render() {
@@ -16,7 +17,7 @@ class Landing extends React.Component{
     console.log(categories);
     return (
       <div className='landing'>
-        <CategoryForm onComplete={categoryCreate} />
+        <CategoryForm className='form' onComplete={categoryCreate} />
         {
           categories.map((category,index) => 
           <div key={index}>
