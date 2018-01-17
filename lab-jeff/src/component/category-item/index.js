@@ -21,10 +21,10 @@ class CategoryItem extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-  //vinicio - I'm creating props in landing
+
   return {
-    //! vinicio - cats : 'This con be ANYTHING',
-    sections: state,
+
+    categories: state,
   };
 };
 
