@@ -1,6 +1,5 @@
-// $color-primary: indianRed;
+$color-primary: cornSilk;
 $color-secondary: goldenRod;
-$color-primary: rgb(32, 218, 156);
 $color-tertiary: cornSilk;
 $color-landing: darkSlateGray;
 $spacing: 1em;
@@ -19,12 +18,6 @@ body {
   margin-left: 40px;
 }
 
-nav {
-  background-color: $color-tertiary;
-  border-radius: $edges;
-  text-align: center;
-}
-
 li {
   list-style-type: none;
   display: inline-block;
@@ -32,9 +25,6 @@ li {
 }
 
 h1 {
-  background-color: $color-landing;
-  border-radius: $edges;
-  padding: 10px 5px;
   text-align: center;
 }
 
@@ -65,10 +55,10 @@ a:hover {
 }
 
 
-button, input, textarea {
+button, input {
   background-color: $color-tertiary;
   border: none;
-  color: $color-primary;
+  color: $color-landing;
   text-align: center;
   padding: 10px 25px;
   text-decoration: none;
@@ -85,20 +75,30 @@ button:hover {
   background-color: $color-landing;
 }
 
-.landing {
-  background-color: $color-tertiary;
+.new-item, .update-category {
+  background-color: goldenRod;  
   padding: 10px;
   border-radius: $edges;
-  color: $color-landing;
+  border: 2px solid black;
+  width: 50%;
+  margin: 0;
+  float: right;
+  height: 170px;
 }
 
-.note-form, .new-item {
-  background-Color: goldenRod;
-  padding: 20px 10px;
+.update-category {
+  float: right;
+}
+
+.category-item {
+  background-color: rgb(241, 127, 162);
+  padding: 20px;
   border-radius: $edges;
+  height: 200px;
+  margin: 10px;
 }
 
-.note-item, form {
+form {
   background-color: $color-landing;
   padding: 40px 20px;
   border-radius: $edges;

@@ -41,11 +41,13 @@ class CategoryForm extends React.Component {
 
   render() {
     let buttonText = this.props.category ? 'update category' : 'create category';
+    let classNameGenerator = this.props.category ? 'update-category' : 'create-category';
 
     return (
+    
       <form
         onSubmit={this.handleSubmit}
-        className='category-form'>
+        className={classNameGenerator}>
 
         <input
           type='text'
