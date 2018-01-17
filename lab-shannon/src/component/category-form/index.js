@@ -2,6 +2,7 @@ import React from 'react';
 
 let emptyState = {
   title: '',
+  budget: 0,
 };
 
 class CategoryForm extends React.Component{
@@ -20,7 +21,6 @@ class CategoryForm extends React.Component{
 
   onSubmit(event){
     event.preventDefault();
-    console.log(this.state);
     this.props.onComplete(this.state);
     this.setState(emptyState);
   }
