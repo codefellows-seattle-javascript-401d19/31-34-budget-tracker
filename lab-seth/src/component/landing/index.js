@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
 import * as category from '../../action/category';
 
 class Landing extends React.Component{
@@ -17,12 +18,14 @@ class Landing extends React.Component{
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category,index) => 
-            <div key={index}>
-              <h2> {category.name} </h2>
-              <button onClick={() => categoryDestroy(category)}> Delete </button>
-              <CategoryForm category={category} onComplete={categoryUpdate} />
-            </div>
-          )}
+          <div key={index}>
+            <CategoryItem 
+              category={category}
+              categoryUpdate={categoryUpdate}
+              categoryDestroy={categoryDestroy}
+            />
+          </div>
+        )}
       </div>
     );
   }

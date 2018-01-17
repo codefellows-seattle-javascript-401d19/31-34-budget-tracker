@@ -1,9 +1,10 @@
-# 28: Routing and Basic Testing
+# 31: Budget Tracker with React & Redux
 
-This app allows a user to input a note through a basic form and save it to the state of of the dashboard, where it dynamically gets rendere to the page using React.
+This app allows a user to input a category and budget for that category through a basic form and save it to the state of of the landing, where it dynamically gets rendered to the page using React. The Category can be updated or deleted once created using the same form.
 
 ## Tech / Framework
 - React
+- Redux
 - Node.js
 - Javascript
 - VS Code
@@ -31,8 +32,10 @@ This app allows a user to input a note through a basic form and save it to the s
 - node-sass
 - react,
 - react-dom,
+- react-redux
 - react-router-dom
 - resolve-url-loader
+- redux
 - sass-loader
 - superagent
 - uuid
