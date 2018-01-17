@@ -1,0 +1,68 @@
+$dark: midnightblue;
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+  font-family: 'Lato';
+  color: $dark;
+  text-align: center;
+  margin: 0 auto;
+  background: lightblue;
+}
+
+div {
+  margin-top: 25px;
+}
+
+h1, h2, h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+input {
+  margin: 5px 0;
+}
+
+button {
+  margin: 0 5px;
+}
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.submit-button {
+  margin-bottom: 5px;
+}
+
+.delete-button {
+  color: rgb(207, 38, 38);
+  margin-bottom: 5px;
+}
+
+.category-item {
+  border: 2px solid $dark;
+  width: 375px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.item-text {
+  color: rgb(180, 129, 0);
+}
