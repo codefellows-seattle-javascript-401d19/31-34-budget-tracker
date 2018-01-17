@@ -12,7 +12,7 @@ export default (state = emptyState, {type, payload}) => {
           return category;
         }
       });
-    case 'CATEGORY_REMOVE':
+    case 'CATEGORY_DESTROY':
       return state.filter(category => {
         if(category.id !== payload.id){
           return category;
