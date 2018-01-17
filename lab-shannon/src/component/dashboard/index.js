@@ -23,7 +23,7 @@ class Dashboard extends React.Component{
 }
 
 let mapStateToProps = (state) => {
-  return {categories : state};
+  return {categories : state.categories};
 };
 
 let mapDispatchToProps = (dispatch) => {
