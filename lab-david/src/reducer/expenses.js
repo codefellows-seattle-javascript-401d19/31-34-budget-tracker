@@ -1,7 +1,5 @@
 let emptyState = {};
 
-
-
 export default(state = emptyState, action) => {
   let {type, payload} = action;
   let expenseID, expenseCategories, updatedCategories;
