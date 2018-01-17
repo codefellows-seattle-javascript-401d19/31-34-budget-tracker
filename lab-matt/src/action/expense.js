@@ -1,20 +1,22 @@
 import v1 from 'uuid';
 
 export const createAction = ({ title, price }) => ({
-  type: 'CATEGORY_CREATE',
+  type: 'EXPENSE_CREATE',
   payload: {
     title,
+    price, 
     id: v1(),
-    createdOn: new Date(),
+    categoryID: 1, 
+    timestamp: new Date(),
   },
 });
 
 export const updateAction = (category) => ({
-  type: 'CATEGORY_UPDATE',
+  type: 'EXPENSE_UPDATE',
   payload: category,
 });
 
 export const removeAction = (category) => ({
-  type: 'CATEGORY_REMOVE',
+  type: 'EXPENSE_REMOVE',
   payload: category,
 });

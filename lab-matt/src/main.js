@@ -4,12 +4,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-console.log('proof of life');
-
 import App from './component/app';
-import categoryReducer from './reducer/categories.js';
+import reducer from './reducer';
 
-let store = createStore(categoryReducer, composeWithDevTools());
+let store = createStore(reducer, composeWithDevTools());
 
 store.subscribe(() => {
   console.log('__STATE__', store.getState());

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as category from '../../action/category';
 import CategoryForm from '../category-form';
+// import ExpenseForm from '../expense-form';
 
 class CategoryItem extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class CategoryItem extends React.Component {
 
     return(
       <div>
-        <h2> {title} | ${category.price}</h2>
+        <h2> {title} </h2>
         <button onClick={() => categoryRemove(category)}> delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate} />
       </div>
