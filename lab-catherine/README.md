@@ -2,29 +2,24 @@
 
 ## Lab 31: Budget Tracker
 
-![Budget Tracker Overview](./assets/todo-list-overview.png)
+![Budget Tracker Overview](./asset/budget-tracker-overview.png)
 
 ### Author: 
 Catherine Looper
 
 ### Motivation
 
-In this project, I built a frontend Todo List application containing a Home Page with a brief description about the application, and a Dashboard page where users can create their own Todo List. To create a Todo List, users can enter a note title and description and click `Create`. Users can edit any note by clicking the corresponding `Edit` button. This will take the user to a modal editing view where users can make edits to their notes. If a user would like to save the edit, they may click the `Update` button. If the user does not want to save their edit, they can click the `close` button, which will take the user back to their Dashboard. Users also have the ability to remove any of their created notes by clicking the `Delete` button next to the note they would like to remove. 
+In this project, I built a frontend Budget Tracker application. To create a new budget item, users can enter a name and a budget amount and click `create category`. Users can update a budget item by editing the information on the right-hand side of the corresponding budget item and clicking `update category`. Users also have the ability to remove any of their created budget items by clicking the `delete` button next to the budget item they would like to remove. 
 
 In this application, I configured webpack to compile JavaScript and SASS into a bundle and configured babel to transpile JSX and ES6 to ES5 JavaScript. I was able to create and render React components to the DOM, add event listeners to React components, and update React component state.
 
-This application uses localStorage for persistence!
 
 ### Build
 
-<!-- ![Todo List Tree](./assets/todolist-tree.png) -->
+![Budget Tracker Tree](./asset/budget-tracker-tree.png)
 
-#### Sample Note View:
-![Sample Notes](./assets/example-notes.png)
-
-#### Modal Update Note View:
-
-![Sample Modal Update View](./assets/modal-view.png)
+#### Sample Budget View:
+![Sample Budget Tracker](./asset/budget-tracker-example.png)
 
 ### Limitations
 
@@ -65,10 +60,9 @@ Standard JavaScript with ES6, SASS, CSS, HTML, React
 * Step 2. `npm install`
 * Step 3. `npm run watch`
 * Step 4. You should now be able to visit: `http://localhost:8080/` to view the application
-* Step 5. The loading/home page will be displayed - to access the Todo list - click on the nav bar item `Dashboard`.
-* Step 6. To create a new note, enter a title and a description and click the `Create` button. 
-* Step 7. Notes can be edited by clicking the `Edit` button. Once the note is edited, click `Update` to save or click `close` if you do not want to save your edits.
-* Step 8. Notes can be removed by clicking the corresponding `Delete` button.
+* Step 5. To create a new budget item, enter a name and a budget amount and click the `create category` button. 
+* Step 6. Budget categories can be edited by changing the information on the right hand side and clicking the `update category` button. 
+* Step 7. Budget items can be removed by clicking the corresponding `delete` button.
 
 ### Credits
 
