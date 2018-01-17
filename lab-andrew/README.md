@@ -1,6 +1,8 @@
-# Lab 31
+# Lab 31 Budget Tracker
 
 ## Overview
+
+This is a budget tracker app. A new budget can be created with the form on the home page. This will add a new budget to the list of budgets. The budget will have an update form attached which allows a user to update that budget. There will also be a delete button to delete this budget category. 
 
 ***
 ## Getting Started
