@@ -1,9 +1,9 @@
 # Code Fellows: Code 401d19: Full-Stack JavaScript
 
-## Lab 28: Todo App
+## Lab 31: Budget Tracker
 ### 1/16/18
 
-The purpose of this lab is to build a budget tracking app using React and Redux.
+The purpose of this lab is to build a budget tracking app using React, and to use Redux to manage state.
 
 ## Tech/frameworks/packages
 
