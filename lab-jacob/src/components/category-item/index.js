@@ -12,34 +12,27 @@ class CategoryItem extends React.Component{
       categoryRemove,
     } = this.props
   
-
   return (
-    <div className = 'dashboard'>
-      <CategoryForms/>
+    <div className = 'categoryitem'>
+      <CategoryForm/>
       {
-        categories.map((category, i) => 
+        categories.map((category, i) => {
           <div key={i}>
             <h2> {category.name}</h2>
-            <button onClick={() => categoryRemove(category)}> Delete </button>
-            <CategoryForm category={category} onComplete={categoryUpdate} />
+            <h3>Budget: ${category.budget}</h3>
+            <CategoryForm 
+            category={category} 
+            onComplete={categoryUpdate} />
+<button onClick={() => categoryRemove(category)}> Delete </button>
           </div>
+          }
         )}
+      
     </div>
     )
   }
 }
 
-let mapStateToProps = (state) => {
-  return{
-    categories : state,
-  }
-}
 
-let mapDispatchToProps = (dispatch) => {
-  return{
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem)
+export default CategoryItem
