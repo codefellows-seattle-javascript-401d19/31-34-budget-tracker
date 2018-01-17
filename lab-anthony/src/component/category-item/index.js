@@ -1,7 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
-import * as categoryActions from '../../action/category';
 
 class CategoryItem extends React.Component{
   render(){
@@ -22,15 +20,4 @@ class CategoryItem extends React.Component{
   }
 }
 
-let mapStateToProps = (state) => {
-  return {...state};
-};
-
-let mapDispatchToProps = (dispatch) => {
-  return{
-    categoryUpdate: (data) => dispatch(categoryActions.updateAction(data)),
-    categoryRemove: (data) => dispatch(categoryActions.removeAction(data)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryItem);
+export default CategoryItem;
