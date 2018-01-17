@@ -5,13 +5,13 @@ let emptyState = {
   budget: 0,
 };
 
-class SectionForm extends React.Component {
+class CategoryForm extends React.Component {
   constructor(props){
     super(props);
 
     this.state = this.props.category || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(SectionForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -20,8 +20,9 @@ class SectionForm extends React.Component {
   }
 
   handleChange(event){
-    let { name, value } = event.target;
-
+    let {name, value} = event.target;
+    console.log(name, value);
+    
     this.setState({
       [name]: value,
     });
@@ -51,18 +52,18 @@ class SectionForm extends React.Component {
           type='text'
           name='name'
           placeholder='Budget Name'
-          value={this.state.title}
+          value={this.state.name}
           onChange={this.handleChange}
-          required='true'
+          required
         />
 
         <input
           type='number'
           name='budget'
           placeholder='Budget Limit, Whole Dollars($) Only'
-          value={this.state.title}
+          value={this.state.budget}
           onChange={this.handleChange}
-          require='true'
+          required
 
         />
         <button type='submit'> {buttonText} </button>
@@ -71,4 +72,4 @@ class SectionForm extends React.Component {
   }
 }
 
-export default SectionForm;
+export default CategoryForm;

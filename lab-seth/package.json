@@ -2,7 +2,7 @@
   "name": "lab-seth",
   "version": "1.0.0",
   "description": "Redux",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "directories": {
     "lib": "lib"
   },

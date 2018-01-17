@@ -4,9 +4,9 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './component/app';
-import sectionsReducer from './reducer/sections';
+import categoriesReducer from './reducer/categories.js';
 
-let store = createStore(sectionsReducer);
+let store = createStore(categoriesReducer);
 
 store.subscribe(() => {
   console.log('__STATE__', store.getState());

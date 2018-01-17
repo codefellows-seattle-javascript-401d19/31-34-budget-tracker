@@ -1,27 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
 import {connect} from 'react-redux';
-import SectionForm from '../category-form';
+import CategoryForm from '../category-form';
 import * as category from '../../action/category';
 
 class Landing extends React.Component{
   render() {
     let {
-      categorys,
+      categories,
       categoryCreate,
       categoryUpdate,
-      categoryRemove,
+      categoryDestroy,
     } = this.props;
 
     return (
       <div className='landing'>
-        <SectionForm onComplete={categoryCreate} />
+        <CategoryForm onComplete={categoryCreate} />
         {
-          categorys.map((categoryRemove,index) => 
+          categories.map((category,index) => 
             <div key={index}>
-              <h2> {category.title} </h2>
-              <button onClick={() => categoryRemove(categoryRemove)}> Delete </button>
-              <SectionForm category={category} onComplete={categoryUpdate} />
+              <h2> {category.name} </h2>
+              <button onClick={() => categoryDestroy(category)}> Delete </button>
+              <CategoryForm category={category} onComplete={categoryUpdate} />
             </div>
           )}
       </div>
@@ -32,7 +31,7 @@ class Landing extends React.Component{
 let mapStateToProps = (state) => {
   //creating props in landing
   return {
-    categorys : state,
+    categories : state,
   }
 };
 
@@ -41,7 +40,7 @@ let mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (data) => dispatch(category.createAction(data)),
     categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
+    categoryDestroy: (data) => dispatch(category.removeAction(data)),
   }
 };
 
