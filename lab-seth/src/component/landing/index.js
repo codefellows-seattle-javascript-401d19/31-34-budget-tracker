@@ -13,6 +13,7 @@ class Landing extends React.Component{
       categoryDestroy,
     } = this.props;
 
+    console.log(categories);
     return (
       <div className='landing'>
         <CategoryForm onComplete={categoryCreate} />

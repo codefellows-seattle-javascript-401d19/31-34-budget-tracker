@@ -11,6 +11,7 @@ class CategoryForm extends React.Component {
 
     this.state = this.props.category || emptyState;
 
+
     let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
@@ -21,7 +22,8 @@ class CategoryForm extends React.Component {
 
   handleChange(event){
     let {name, value} = event.target;
-    console.log(name, value);
+    
+    console.log('Targets: ', name, value);
     
     this.setState({
       [name]: value,
@@ -64,8 +66,15 @@ class CategoryForm extends React.Component {
           value={this.state.budget}
           onChange={this.handleChange}
           required
-
         />
+
+        <select value={this.state.period} onChange={this.handleChange} name='period' defaultValue='' required>
+          <option value="" disabled>Period</option>
+          <option value="month">Month</option>
+          <option value="week">Week</option>
+          <option value="year">Year</option>
+        </select>
+
         <button type='submit'> {buttonText} </button>
       </form>
     );

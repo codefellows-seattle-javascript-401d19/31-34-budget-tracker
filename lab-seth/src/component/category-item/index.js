@@ -7,7 +7,7 @@ class CategoryItem extends React.Component {
     return (
 
       <div className='category-item'>
-        <h2> {category.name} </h2>
+        <h2> {category.name}: ${category.budget} / {category.period} </h2>
         <button onClick={() => categoryDestroy(category)}> Delete </button>
         <CategoryForm
           category={category}
