@@ -46,6 +46,7 @@ Standard JavaScript with ES6, SASS, CSS, HTML, React
 * react-redux
 * react-router-dom
 * redux
+* redux-devtools-extension
 * resolve-url-loader
 * sass-loader
 * superagent

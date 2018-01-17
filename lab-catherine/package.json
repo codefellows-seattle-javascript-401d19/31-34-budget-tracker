@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/ccloops/31-34-budget-tracker#readme",
   "devDependencies": {
-    "eslint": "^4.15.0"
+    "eslint": "^4.15.0",
+    "redux-devtools-extension": "^2.13.2"
   },
   "dependencies": {
     "babel-core": "^6.26.0",
