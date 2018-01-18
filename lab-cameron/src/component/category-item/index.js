@@ -2,11 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CategoryForm from '../category-form';
 import ExpenseForm from '../expense-form';
+import ExpenseItem from '../expense-item';
 
 import * as expenseActions from '../../action/expense';
 import * as categoryActions from '../../action/category';
 
-const CategoryItem = ({ category, categoryRemove, categoryUpdate }) => {
+const CategoryItem = ({ expenses, category, expenseCreate, categoryRemove, categoryUpdate }) => {
+  const categoryExpenses = expenses[category.id];
+
   return (
     <div id='item'>
       <h2>{category.name}</h2>
@@ -18,9 +21,14 @@ const CategoryItem = ({ category, categoryRemove, categoryUpdate }) => {
       <button onClick={() => categoryRemove(category)}>delete</button>
       <h2>Expense Name:</h2>
       <h3>Price:</h3>
-      <ExpenseForm
-        category={category}
-      />
+      <ExpenseForm category={category} onComplete={expenseCreate} />
+      {
+        categoryExpenses.map(expense => {
+          return <div key={expense.id}>
+            <ExpenseItem expense={expense} />;
+          </div>;
+        })
+      }
     </div>
   );
 };
