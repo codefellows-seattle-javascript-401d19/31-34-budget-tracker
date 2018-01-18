@@ -7,7 +7,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './component/app';
 import reducer from './reducer';
 
-let store = createStore(reducer, composeWithDevTools());
+let middleware = {};
+
+let store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 store.subscribe(() => {
   console.log('__STATE__', store.getState());

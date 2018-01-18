@@ -11,12 +11,14 @@ export const createAction = ({ title, price, categoryID }) => ({
   },
 });
 
-export const updateAction = (category) => ({
-  type: 'EXPENSE_UPDATE',
-  payload: category,
-});
+export const updateAction = (expense) => {
+  return {
+    type: 'EXPENSE_UPDATE',
+    payload: expense,
+  };
+};
 
-export const removeAction = (category) => ({
+export const removeAction = (expense) => ({
   type: 'EXPENSE_REMOVE',
-  payload: category,
+  payload: expense,
 });

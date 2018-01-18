@@ -26,10 +26,16 @@ class ExpenseForm extends React.Component {
 
     this.handleSubmit = (event) => {
       event.preventDefault();
+      let {title, price} = this.state;
+
       let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+
+      price = price.toString().replace(/^(-|0)?0*/, '$1');
+      price = isNaN(Number(price)) ? 0 : Number(price);
 
       this.props.onComplete({
         ...this.state,
+        price,
         categoryID,
       });
       this.setState(emptyState);

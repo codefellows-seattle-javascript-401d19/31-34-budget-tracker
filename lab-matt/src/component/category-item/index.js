@@ -4,6 +4,7 @@ import * as category from '../../action/category';
 import * as expense from '../../action/expense';
 import CategoryForm from '../category-form';
 import ExpenseForm from '../expense-form';
+import ExpenseItem from '../expense-item';
 
 class CategoryItem extends React.Component {
   render() {
@@ -19,12 +20,8 @@ class CategoryItem extends React.Component {
         <ExpenseForm category={category} onComplete={expenseCreate} />
         {
           categoryExpenseList.map((expense, index) => {
-            let price = expense.price.startsWith('-') ? expense.price.replace('-', '-$') : `$${expense.price}`;
-            let title = expense.title || `'no title'`;
             return (
-              <div key={index}>
-                <h4> {title} | {price} </h4>
-              </div>
+              <ExpenseItem key={index} expense={expense} />
             );
           })
         }

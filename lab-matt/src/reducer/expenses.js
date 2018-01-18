@@ -25,7 +25,7 @@ export default (state = emptyState, { type, payload }) => {
       return {...state, [categoryID] : updatedExpenses};
   
     case 'EXPENSE_REMOVE':
-      categoryID = payload.id;
+      categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
       updatedExpenses = categoryExpenses.filter(expense => expense.id !== payload.id);
       return {...state, [categoryID] : updatedExpenses};
