@@ -28,18 +28,18 @@ class ExpenseForm extends React.Component {
     this.setState({ name : value });
   }
 
-  handleExpenseTotalChange(event){
+  handleExpensePriceChange(event){
     let {value} = event.target;
-    this.setState({ ExpenseTotal : value });
+    this.setState({ price : value });
   }
 
   handleSubmit(event){
     event.preventDefault();
-    let expenseID = this.props.expense ? this.props.expense.id : this.props.expense.categoryID;
+    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
 
     this.props.onComplete({
       ...this.state,
-      expenseID,
+      categoryID,
     });
 
     this.setState(emptyState);
@@ -69,14 +69,16 @@ class ExpenseForm extends React.Component {
           placeholder='Expense'
           value={this.state.name}
           onChange={this.handleNameChange}
+          required
         />
 
         <input
           type='number'
-          name='expenseTotal'
+          name='price'
           placeholder='Price'
-          value={this.state.expenseTotal}
-          onChange={this.handleExpenseTotalChange}
+          value={this.state.price}
+          onChange={this.handleExpensePriceChange}
+          required
         />
 
         <button type='submit'> {buttonText} </button>

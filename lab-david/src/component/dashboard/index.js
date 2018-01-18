@@ -1,7 +1,7 @@
 
 import React from 'react';
 import {connect} from 'react-redux';
-import Category from '../category-form';
+import Category from '../category';
 import CategoryForm from '../category-form';
 import * as categoryActions from '../../action/category';
 
@@ -22,10 +22,8 @@ class Dashboard extends React.Component{
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category, index) => 
-            <div key={index} category={category}>
-              
-              
-            </div>
+            <Category key={index} category={category} />
+          
           )}
       </div>
     );

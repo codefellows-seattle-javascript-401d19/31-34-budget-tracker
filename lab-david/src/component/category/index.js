@@ -25,10 +25,10 @@ class Category extends React.Component {
         <p> Category Budget: {category.budgetTotal} </p>
         <button onClick={() => categoryRemove(category)}> delete </button> 
         <CategoryForm category={category} onComplete={categoryUpdate} />
-        <ExpenseForm category ={category} onComplete={expenseCreate}
+        <ExpenseForm category ={category} onComplete={expenseCreate} />
 
         {
-          categoryExpenses.map((expense, index) => <Expense expense={expense} key={i} />)
+          categoryExpenses.map((expense, index) => <Expense expense={expense} key={index} />)
         }
         
       </div>
