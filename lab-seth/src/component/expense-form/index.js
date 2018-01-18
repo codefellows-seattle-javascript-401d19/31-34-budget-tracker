@@ -1,4 +1,5 @@
 import React from 'react';
+import './expense-form.scss';
 
 let emptyState = {name : '', price: 0};
 

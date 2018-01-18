@@ -22,9 +22,11 @@ class CategoryItem extends React.Component {
     return (
 
       <div className='category-item'>
-        <h2> {category.name}: ${category.budget} / {category.period} </h2>
-        <CategoryForm category={category} onComplete={categoryUpdate} />
-        <button onClick={() => categoryDestroy(category)}> Delete This Category</button>
+        <div>
+          <h2> {category.name}: ${category.budget} / {category.period} </h2>
+          <CategoryForm category={category} onComplete={categoryUpdate} />
+          <button onClick={() => categoryDestroy(category)}> Delete This Category</button>
+        </div>
         <ExpenseForm category={category} onComplete={expenseCreate} />
         {
           categoryExpenses.map((expense, index) => 
