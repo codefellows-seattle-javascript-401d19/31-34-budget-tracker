@@ -13,7 +13,6 @@ class Dashboard extends React.Component{
       categoryUpdate,
       categoryRemove,
     } = this.props
-  
 
   return (
     <div className = 'dashboard'>
@@ -24,8 +23,8 @@ class Dashboard extends React.Component{
           <CategoryItem 
             category={category}
             categories={categories}
-            deleteCategory={categoryRemove}
-            updateCategory={categoryUpdate}
+            categoryRemove={categoryRemove}
+            categoryUpdate={categoryUpdate}
           />
           </div>
         })
@@ -37,13 +36,15 @@ class Dashboard extends React.Component{
 
 let mapStateToProps = (state) => {
   return{
-    categories : [...state],
+    categories : state.category,
   }
 }
 
 let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate: (data) => dispatch(category.createAction(data)),
+    categoryRemove: (data) => dispatch(category.createAction(data)),
+    categoryUpdate: (data) => dispatch(category.createAction(data))
   }
 }
 

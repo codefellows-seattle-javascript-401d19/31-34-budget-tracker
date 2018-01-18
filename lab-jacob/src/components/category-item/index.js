@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import CategoryForm from '../category-form'
+import ExpenseForm from '../expense-form'
+import ExpenseItem from '../expense-item'
 import * as category from '../../action/categories'
 
 class CategoryItem extends React.Component{
@@ -10,6 +12,8 @@ class CategoryItem extends React.Component{
       categories,
       categoryUpdate,
       categoryRemove,
+      name,
+      price,
     } = this.props
   
   return (
@@ -27,7 +31,7 @@ class CategoryItem extends React.Component{
           </div>
           }
         )}
-      
+      <ExpenseItem/>
     </div>
     )
   }
