@@ -64,7 +64,7 @@ button:hover {
   background-color: $color-landing;
 }
 
-.new-item, .update-category {
+.new-item, .update-category, .expense-form {
   background-color: goldenRod;  
   padding: 10px;
   border-radius: $edges;
@@ -74,8 +74,6 @@ button:hover {
   float: left;
   height: 170px;
 }
-
-
 
 .category-item {
   background-color: rgb(241, 127, 162);
@@ -96,15 +94,16 @@ form {
   overflow-wrap: break-word;
 }
 
-// .delete-button {
-//   float: left;
-// }
-
 .create-category>button, input {
   width: 100%;
 }
 
 .expense-form {
   margin-left: 20px;
+  background-color: lightblue;
+  width: 300px;
+  margin-left: 200px;
+  margin-top: 0;
+
 
 }
