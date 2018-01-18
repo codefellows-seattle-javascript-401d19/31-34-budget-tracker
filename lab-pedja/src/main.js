@@ -5,10 +5,10 @@ import {Provider} from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import App from "./component/app";
-import categoryReducer from './reducer/categories.js';
+import reducer from './reducer';
 
 let middleware = {};
-const store = createStore(categoryReducer, composeWithDevTools(
+const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(...middleware),
 ));
 
