@@ -37,7 +37,7 @@ class ExpenseForm extends React.Component {
   }
 
   render() {
-    let buttonText = this.props.expense ? 'update expense' : 'create expense';
+    let buttonText = this.props.expense ? 'Update Expense' : 'Create New Expense';
 
     return (
       <form

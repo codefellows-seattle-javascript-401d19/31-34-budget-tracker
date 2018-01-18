@@ -27,7 +27,7 @@ class CategoryItem extends React.Component {
         <h2 className='item-text'> {category.name} </h2>
         <h2 className='item-text'> ${category.budget} </h2>
         <CategoryForm category={category} onComplete={categoryUpdate} />
-        <button className='delete-button' onClick={() => categoryRemove(category)}> delete </button>
+        <button className='delete-button' onClick={() => categoryRemove(category)}>Delete This Category</button>
         <h3>Add Expense</h3>
         <ExpenseForm category={category} onComplete={expenseCreate} />
         {header}

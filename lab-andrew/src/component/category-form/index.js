@@ -34,7 +34,7 @@ class CategoryForm extends React.Component {
   }
 
   render() {
-    const buttonText = this.props.category ? 'update category' : 'create category';
+    const buttonText = this.props.category ? 'Update Category' : 'Create New Category';
     const formCategory = this.props.category ? 'update-form' : 'create-form';
     const header = !this.props.category ? <h2>Create New Budget Category</h2> : null;
 
