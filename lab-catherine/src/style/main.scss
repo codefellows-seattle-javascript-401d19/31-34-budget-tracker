@@ -34,16 +34,6 @@ h2 {
   color: $color-landing;
 }
 
-img {
-  height: 20px;
-  width: 20px;
-  margin-left: 10px;
-}
-
-img:hover {
-  background-color: $color-tertiary;
-}
-
 a, a:visited {
   text-decoration: none;
   color: $color-secondary;
@@ -79,15 +69,13 @@ button:hover {
   padding: 10px;
   border-radius: $edges;
   border: 2px solid black;
-  width: 50%;
+  width: 20%;
   margin: 0;
-  float: right;
+  float: left;
   height: 170px;
 }
 
-.update-category {
-  float: right;
-}
+
 
 .category-item {
   background-color: rgb(241, 127, 162);
@@ -95,6 +83,7 @@ button:hover {
   border-radius: $edges;
   height: 200px;
   margin: 10px;
+  margin-right: 0;
 }
 
 form {
@@ -107,10 +96,15 @@ form {
   overflow-wrap: break-word;
 }
 
-.delete-button {
-  float: left;
+// .delete-button {
+//   float: left;
+// }
+
+.create-category>button, input {
+  width: 100%;
 }
 
-.github {
-  text-align: center;
+.expense-form {
+  margin-left: 20px;
+
 }

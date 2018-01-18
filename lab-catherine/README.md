@@ -1,6 +1,6 @@
 # Code Fellows: Seattle 401 JavaScript - 401d19
 
-## Lab 31: Budget Tracker
+## Lab 31-34: Budget Tracker
 
 ![Budget Tracker Overview](./asset/budget-tracker-overview.png)
 
@@ -10,6 +10,8 @@ Catherine Looper
 ### Motivation
 
 In this project, I built a frontend Budget Tracker application. To create a new budget item, users can enter a name and a budget amount and click `create category`. Users can update a budget item by editing the information on the right-hand side of the corresponding budget item and clicking `update category`. Users also have the ability to remove any of their created budget items by clicking the `delete` button next to the budget item they would like to remove. 
+
+Users can also add expenses to each category by entering an expense `name` and `price` and clicking the `create expense` button. Users can edit information and click `update expense` to update, and `delete` to remove the expense from the category.
 
 In this application, I configured webpack to compile JavaScript and SASS into a bundle and configured babel to transpile JSX and ES6 to ES5 JavaScript. I was able to create and render React components to the DOM, add event listeners to React components, and update React component state.
 
@@ -64,6 +66,7 @@ Standard JavaScript with ES6, SASS, CSS, HTML, React
 * Step 5. To create a new budget item, enter a name and a budget amount and click the `create category` button. 
 * Step 6. Budget categories can be edited by changing the information on the right hand side and clicking the `update category` button. 
 * Step 7. Budget items can be removed by clicking the corresponding `delete` button.
+* Step 8. To create a new expense item, enter a name and a price and click the `create expense` button. Expenses can be updated with `update expense` or they can be deleted by clicking `delete`.
 
 ### Credits
 
