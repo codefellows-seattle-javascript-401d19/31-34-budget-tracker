@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
+import CategoryItem from '../category-item';
+
 import * as category from '../../action/category';
 
 class Landing extends React.Component{
@@ -17,12 +19,12 @@ class Landing extends React.Component{
         <h1> Budget Tracking Form </h1>
         <CategoryForm handleComplete={categoryCreate} />
         {
-          categorys.map((category, i) =>
-            <div key={i}>
-              <h2>{category.name} || budget: ${category.budget}</h2>
-              <button onClick={() => categoryRemove(category)}> delete </button>
-              <CategoryForm category={category} handleComplete={categoryUpdate} />
-            </div>
+          categorys.map((category) =>
+            <CategoryItem
+              key={category.id}
+              category={category}
+              categoryRemove={categoryRemove}
+              categoryUpdate={categoryUpdate}/>
           )
         }
       </div>
@@ -32,7 +34,7 @@ class Landing extends React.Component{
 
 let mapStateToProps = (state) => {
   return {
-    categorys: state,
+    categorys: state.categorys,
   };
 };
 let mapDispatchToProps = (dispatch) => {
