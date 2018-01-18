@@ -55,7 +55,7 @@ class ExpenseForm extends Component {
           type='text'
           name='price'
           placeholder='price'
-          value={this.state.budget}
+          value={this.state.price}
           onChange={this.handleChange}
         />
         <br/>
