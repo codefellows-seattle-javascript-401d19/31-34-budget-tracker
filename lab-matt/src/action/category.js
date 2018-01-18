@@ -1,11 +1,11 @@
 import v1 from 'uuid';
 
-export const createAction = ({ title, price }) => ({
+export const createAction = ({ title }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     title,
     id: v1(),
-    createdOn: new Date(),
+    timestamp: new Date(),
   },
 });
 

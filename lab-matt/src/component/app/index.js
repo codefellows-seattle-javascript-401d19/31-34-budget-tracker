@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link} from 'react-router-dom';
 import Dashboard from '../dashboard/index';
 
 class App extends React.Component {
@@ -8,6 +8,9 @@ class App extends React.Component {
       <div className='app'>
         <BrowserRouter>
           <div>
+            <nav>
+              <Link to='/'> Home </Link>
+            </nav>
             <Route exact path='/' component={Dashboard} />
           </div>
         </BrowserRouter>
