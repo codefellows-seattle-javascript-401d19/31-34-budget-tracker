@@ -20,8 +20,6 @@ export default (state = emptyState, action) => {
     case 'EXPENSE_UPDATE':
       categoryID = payload.categoryID;
       categoryExpenseList = state[categoryID];
-      console.log(state, `state`);
-      console.log(categoryID, `category id`);
       updatedExpenseList = categoryExpenseList.map(expense => expense.id === payload.id ? payload : expense);
       return {...state, [categoryID] : updatedExpenseList};
     case 'EXPENSE_DESTROY':
