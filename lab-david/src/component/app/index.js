@@ -6,15 +6,15 @@ import Dashboard from '../dashboard';
 class App extends React.Component{
   render(){
     return(
-        <div className='app top-banner'> 
-          <BrowserRouter>
-            <div>
+      <div className='app top-banner'> 
+        <BrowserRouter>
+          <div>
             
-              <h1> Budget Tracking </h1>
-              <Route exact path='/' component={Dashboard} />
-            </div>
-          </BrowserRouter>
-        </div>
+            <h1> Budget Tracking </h1>
+            <Route exact path='/' component={Dashboard} />
+          </div>
+        </BrowserRouter>
+      </div>
     );
 
   }

@@ -38,9 +38,8 @@ class Dashboard extends React.Component{
 
 let mapStateToProps = (state) => {
   return{
-    // randomObj : 'String',
-    categories : state,
-  }
+    categories : state.categories,
+  };
 };
 
 
@@ -50,7 +49,7 @@ let mapDispatchToProps = (dispatch) => {
     categoryUpdate : (data) => dispatch(category.updateAction(data)),
     categoryRemove : (data) => dispatch(category.removeAction(data)),
 
-  }
+  };
 };
 
 // this connects the above two functions to the store
