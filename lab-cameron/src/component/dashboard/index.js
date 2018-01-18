@@ -4,18 +4,15 @@ import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
 import * as category from '../../action/category';
 
-const Dashboard = ({ categories, categoryCreate, categoryUpdate, categoryRemove }) => {
+const Dashboard = ({ categories, categoryCreate }) => {
   return (
     <div className='dashboard'>
+      <h2 id='category-headline'>Create Category</h2>
       <CategoryForm onComplete={categoryCreate} />
       {
         categories.map(category => {
           return <div key={category.id}>
-            <CategoryItem
-              category={category}
-              deleteCategory={categoryRemove}
-              updateCategory={categoryUpdate}
-            />
+            <CategoryItem category={category} />
           </div>;
         })
       }
@@ -32,8 +29,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     categoryCreate: data => dispatch(category.createAction(data)),
-    categoryUpdate: data => dispatch(category.updateAction(data)),
-    categoryRemove: data => dispatch(category.removeAction(data)),
   };
 };
 
