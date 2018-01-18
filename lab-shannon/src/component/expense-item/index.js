@@ -5,11 +5,16 @@ let emptyState = {};
 
 class ExpenseItem extends React.Component{
   render(){
+    console.log(this.props.expenses);
     return(
-      <div>
-        <p>Expense Item</p>
-        <ExpenseForm onComplete={this.props.expenseUpdate}/>
-      </div>
+      this.props.expenses.map((expense, index) => {
+        return(
+          <div key={index}>
+            <p>Expense Item</p>
+            <ExpenseForm onComplete={this.props.expenseUpdate}/>
+          </div>
+        );
+      })
     );
   }
 }

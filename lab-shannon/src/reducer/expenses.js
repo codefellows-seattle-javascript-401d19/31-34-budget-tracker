@@ -3,34 +3,30 @@ const emptyState = {};
 export default (state = emptyState, action) => {
   let {type, payload} = action;
   let categoryID, categoryExpenseList, updatedExpenseList;
+  let updatedState;
   switch(type){
     //for category cases the payload is the *category* object
-    case 'CATEGORY_CREATE': {
+    case 'CATEGORY_CREATE':
       return {...state, [payload.id] : []};
-    }
-    case 'CATEGORY_DESTROY': {
-      let updatedState = {...state};
+    case 'CATEGORY_DESTROY':
+      updatedState = {...state};
       delete updatedState[payload.id];
       return updatedState;
-    }
-    case 'EXPENSE_CREATE':{
+    case 'EXPENSE_CREATE':
       categoryID = payload.categoryID;
       categoryExpenseList = state[categoryID];
       updatedExpenseList = [...categoryExpenseList, payload];
       return {...state, [categoryID]: updatedExpenseList};
-    }
-    case 'EXPENSE_UPDATE': {
+    case 'EXPENSE_UPDATE':
       categoryID = payload.categoryID;
       categoryExpenseList = state[categoryID];
       updatedExpenseList = categoryExpenseList.map(expense => expense.id === payload.id ? payload : expense);
       return {...state, [categoryID] : updatedExpenseList};
-    }
-    case 'EXPENSE_DESTROY': {
+    case 'EXPENSE_DESTROY':
       categoryID = payload.categoryID;
       categoryExpenseList = state[categoryID];
       updatedExpenseList = categoryExpenseList.filter(expense => expense.id !== payload.id);
       return {...state, [categoryID] : updatedExpenseList};
-    }
     default:
       return state;
   }
