@@ -1,13 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CategoryItem from '../category-item';
-import * as category from '../../action/category';
+import * as categoryAction from '../../action/category';
 
 class Dashboard extends React.Component {
   render() {
     let {
-      categories,
+      categories: categories,
       categoryCreate,
       categoryUpdate,
       categoryRemove,
@@ -38,15 +38,15 @@ class Dashboard extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    categories: state,
+    categories: state.categories,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    categoryCreate: (data) => dispatch(category.createAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
+    categoryCreate: (data) => dispatch(categoryAction.createAction(data)),
+    categoryUpdate: (data) => dispatch(categoryAction.updateAction(data)),
+    categoryRemove: (data) => dispatch(categoryAction.removeAction(data)),
   };
 };
 
