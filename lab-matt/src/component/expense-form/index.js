@@ -2,13 +2,14 @@ import React from 'react';
 
 let emptyState = {
   title: '',
+  price: 0,
 };
 
-class CategoryForm extends React.Component {
+class ExpenseForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.category || emptyState;
+    this.state = this.props.expense || emptyState;
 
     this.handleChange = (event) => {
       let { name, value } = event.target;
@@ -24,16 +25,16 @@ class CategoryForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.category) {
-      this.setState(nextProps.category);
+    if (nextProps.expense) {
+      this.setState(nextProps.expense);
     }
   }
 
   render() {
-    let buttonText = this.props.category ? 'update category' : 'add category';
+    let buttonText = this.props.expense ? 'update expense' : 'add expense';
 
     return (
-      <form onSubmit={this.handleSubmit} className='category-form'>
+      <form onSubmit={this.handleSubmit} className='expense-form'>
         <input onChange={this.handleChange} type="text" name='title' placeholder='title' value={this.state.title} />
         <button type='submit'> {buttonText} </button>
       </form>
@@ -41,4 +42,4 @@ class CategoryForm extends React.Component {
   }
 }
 
-export default CategoryForm;
+export default ExpenseForm;
