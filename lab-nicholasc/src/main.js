@@ -6,11 +6,11 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 
 import App from './component/app';
-import categorysReducer from './reducer/categorys';
+import reducer from './reducer';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
 let middleware = {};
-let store = createStore(categorysReducer, composeWithDevTools(
+let store = createStore(reducer, composeWithDevTools(
   applyMiddleware(...middleware)
 ));
 

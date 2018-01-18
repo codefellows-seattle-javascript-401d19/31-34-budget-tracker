@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoryForm from './category-form';
+import CategoryForm from '../category-form';
 
 class CategoryItem extends React.Component{
   render(){
