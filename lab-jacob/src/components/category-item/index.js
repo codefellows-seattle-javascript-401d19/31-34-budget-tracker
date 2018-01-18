@@ -15,26 +15,24 @@ class CategoryItem extends React.Component{
       name,
       price,
     } = this.props
-  
+
   return (
-    <div className = 'categoryitem'>
-      <CategoryForm/>
-      {
-        categories.map((category, i) => {
+    <div className='categoryitem'>
+        {categories.map((category, i) => (
           <div key={i}>
             <h2> {category.name}</h2>
             <h3>Budget: ${category.budget}</h3>
             <CategoryForm 
             category={category} 
             onComplete={categoryUpdate} />
-<button onClick={() => categoryRemove(category)}> Delete </button>
+       
+            <ExpenseForm />             
+          <button onClick={() => categoryRemove(category)}> Delete </button>
           </div>
-          }
-        )}
-      <ExpenseItem/>
+        ))}
     </div>
     )
-  }
+}
 }
 
 

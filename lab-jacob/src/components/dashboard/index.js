@@ -14,6 +14,7 @@ class Dashboard extends React.Component{
       categoryRemove,
     } = this.props
 
+
   return (
     <div className = 'dashboard'>
       <CategoryForm onComplete={categoryCreate} />
@@ -21,7 +22,6 @@ class Dashboard extends React.Component{
         categories.map(category => {
           return <div key={category.id}>
           <CategoryItem 
-            category={category}
             categories={categories}
             categoryRemove={categoryRemove}
             categoryUpdate={categoryUpdate}

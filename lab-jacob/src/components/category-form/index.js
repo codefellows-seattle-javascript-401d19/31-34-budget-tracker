@@ -35,6 +35,12 @@ class CategoryForm extends React.Component{
   }
 
   render(){
+    console.log('====================================');
+    console.log('THIS IS THE STATE IN THE CATEGORY FORM', this.state);
+    console.log('====================================');
+    console.log('====================================');
+    console.log('THIS IS THE PROPS IN THE CATEGORY FORM', this.props);
+    console.log('====================================');
     let buttonText = this.props.category ? 'update' : 'create'
 
     return(
@@ -44,14 +50,14 @@ class CategoryForm extends React.Component{
       <input 
         type='text'
         name = 'name'
-        placeholder = 'name'
+        placeholder = 'category name'
         value={this.state.name}
         onChange={this.handleChange}
       />
        <input 
         type='text'
         name = 'budget'
-        placeholder = 'budget'
+        placeholder = 'category budget'
         value={this.state.budget}
         onChange={this.handleChange}
       />
