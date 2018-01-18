@@ -17,6 +17,6 @@ export const updateAction = (expense) => ({
 });
 
 export const removeAction = (expense) => ({
-  type: 'EXPENSE_REMOVE',
+  type: 'EXPENSE_DELETE',
   payload: expense,
 });
