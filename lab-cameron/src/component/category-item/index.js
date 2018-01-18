@@ -15,17 +15,16 @@ const CategoryItem = ({ expenses, category, expenseCreate, categoryRemove, categ
       <h2>{category.name}</h2>
       <h3>Budget: ${category.budget}</h3>
       <CategoryForm
-        category={categoryUpdate}
-        onComplete={categoryRemove}
+        category={category}
+        onComplete={categoryUpdate}
       />
       <button onClick={() => categoryRemove(category)}>delete</button>
-      <h2>Expense Name:</h2>
-      <h3>Price:</h3>
+      <h2>Create Expense</h2>
       <ExpenseForm category={category} onComplete={expenseCreate} />
       {
         categoryExpenses.map(expense => {
           return <div key={expense.id}>
-            <ExpenseItem expense={expense} />;
+            <ExpenseItem expense={expense} />
           </div>;
         })
       }

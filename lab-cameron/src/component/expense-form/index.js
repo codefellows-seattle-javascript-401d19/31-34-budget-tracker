@@ -10,7 +10,7 @@ class ExpenseForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.category ? this.props.category : emptyState;
+    this.state = this.props.expense ? this.props.expense : emptyState;
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,20 +23,26 @@ class ExpenseForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.onComplete(this.state);
+    const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
+
+    this.props.onComplete({
+      ...this.state,
+      categoryId,
+    });
+
     this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.category) {
-      this.setState(nextProps.category);
+    if (nextProps.expense) {
+      this.setState(nextProps.expense);
     }
   }
 
   render() {
-    const buttonText = this.props.category ? 'update category' : 'create category';
+    const buttonText = this.props.expense ? 'update expense' : 'create expense';
     return (
-      <form id='main-form' className='category-form' onSubmit={this.handleSubmit}>
+      <form id='main-form' className='expense-form' onSubmit={this.handleSubmit}>
         <input
           type='text'
           name='name'
@@ -47,8 +53,8 @@ class ExpenseForm extends Component {
         <br/>
         <input
           type='text'
-          name='budget'
-          placeholder='budget'
+          name='price'
+          placeholder='price'
           value={this.state.budget}
           onChange={this.handleChange}
         />
