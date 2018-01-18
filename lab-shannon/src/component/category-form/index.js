@@ -1,4 +1,5 @@
 import React from 'react';
+import './category-form.scss';
 
 let emptyState = {
   label: '',
@@ -33,7 +34,7 @@ class CategoryForm extends React.Component{
   render(){
     let buttonText = this.props.category ? 'Update Category' : 'Add Category';
     return(
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className='category-form'>
         <input
           type='text'
           name='label'

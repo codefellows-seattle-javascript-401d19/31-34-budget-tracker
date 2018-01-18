@@ -5,6 +5,7 @@ import ExpenseItem from '../expense-item';
 import * as expenseActions from '../../action/expense';
 import * as categoryActions from '../../action/category';
 import { connect } from 'react-redux';
+import './category-item.scss';
 
 
 class CategoryItem extends React.Component{
@@ -19,7 +20,7 @@ class CategoryItem extends React.Component{
 
     return(
       categories.map((category, index) =>
-        <div key={index}>
+        <div key={index} className='category-item'>
           <h4>Category: {category.label}</h4>
           <p>Budget: ${category.budget}</p>
           <button onClick={() => this.props.categoryDestroy(category)}> Delete Category </button>
