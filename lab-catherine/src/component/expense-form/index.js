@@ -1,6 +1,9 @@
 import React from 'react';
 
-let emptyState = {name : ''};
+let emptyState = {
+  name : '',
+  price: '',
+};
 
 class ExpenseForm extends React.Component {
   constructor(props) {
@@ -14,8 +17,13 @@ class ExpenseForm extends React.Component {
       }
     }
   }
-  handleChange(event) {
+
+  handleNameChange(event) {
     this.setState({name: event.target.value});
+  }
+
+  handlePriceChange(event) {
+    this.setState({price: event.target.value});
   }
 
   handleSubmit(event) {
@@ -48,7 +56,15 @@ class ExpenseForm extends React.Component {
           name='name'
           placeholder='name'
           value={this.state.name}
-          onChange={this.handleChange}
+          onChange={this.handleNameChange}
+        />
+
+        <input
+          type='number'
+          name='price'
+          placeholder='price'
+          value={this.state.price}
+          onChange={this.handlePriceChange}
         />
           
         <button type='submit'>{buttonText}</button>
