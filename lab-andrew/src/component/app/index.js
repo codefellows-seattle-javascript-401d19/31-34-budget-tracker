@@ -7,6 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='app'>
+        <meta content='width=device-width, initial-scale=1.00' name='viewport' />
         <h1>Budget Tracker App</h1>
         <BrowserRouter>
           <div>
