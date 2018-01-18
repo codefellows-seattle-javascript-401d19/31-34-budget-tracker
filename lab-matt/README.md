@@ -1,13 +1,14 @@
-# 31: Budget Tracker
-Description: **Lab 31 of Code Fellows JavaScript 401d19** </br>
+# 31/32: Budget Tracker
+Description: **Lab 31/32 of Code Fellows JavaScript 401d19** </br>
 Author: **Matthew LeBlanc** </br>
-Date: **01/16/18**
+Date: **01/17/18**
 
 ## Features
-This lab features an app that allows a user to track expenses, sorted through categories. It uses redux to hold the appplication's state all in one location for easier access through the application.
+This lab features a react app that allows a user to track expenses, sorted through categories. It uses redux to hold the appplication's state in one location (store) for easier access through the code.
 
 ## Tech/Framework Used
 - react
+- redux
 - node.js
 - javascript
 - Visual Studio Code
@@ -26,8 +27,9 @@ This lab features an app that allows a user to track expenses, sorted through ca
   - babel-preset-react
 2. css-loader
 4. webpack
-  - html-webpack-plugin
   - webpack-dev-server
+  - html-webpack-plugin
+  - extract-text-webpack-plugin
 5. node-sass
 6. sass-loader
 7. style-loader
@@ -35,7 +37,8 @@ This lab features an app that allows a user to track expenses, sorted through ca
 8. react
   - react-dom
   - react-router-dom
-9. extract-text-webpack-plugin
+9. redux
+  - redux-devtools-extension
 10. uuid
 **DEV**
 1. enzyme
