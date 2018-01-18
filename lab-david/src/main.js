@@ -11,9 +11,11 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 import './style/main.scss';
 
-let middleware = {};
+import session from './lib/redux-session';
+import reporter from './lib/redux-reporter';
+
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(...middleware),
+  applyMiddleware(reporter, session),
 ));
 
 const container = document.createElement('div');
