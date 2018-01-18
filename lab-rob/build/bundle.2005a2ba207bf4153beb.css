@@ -133,40 +133,67 @@ nav a {
   margin-right: 5%;
 }
 
-.dashboard .category-form {
+.dashboard .category-form,
+.dashboard .expense-form {
   margin-left: 5%;
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
-.dashboard .category-form input {
+.dashboard .category-form input,
+.dashboard .expense-form input {
   margin-right: 2.5%;
   width: 30%;
 }
 
 .dashboard .category-item {
-  border-bottom: 1px dashed black;
-  padding-top: 1em;
+  border-bottom: 1px solid black;
+}
+
+.dashboard .category-item,
+.dashboard .expense-item {
   padding-bottom: 1em;
 }
 
 .dashboard .category-item h2,
-.dashboard .category-item h3 {
+.dashboard .category-item h3,
+.dashboard .category-item h4,
+.dashboard .expense-item h2,
+.dashboard .expense-item h3,
+.dashboard .expense-item h4 {
   display: inline-block;
 }
 
-.dashboard .category-item h2 {
+.dashboard .category-item h2,
+.dashboard .category-item h3,
+.dashboard .expense-item h2,
+.dashboard .expense-item h3 {
   font-weight: bold;
   margin-right: 5%;
   padding-left: 5%;
+}
+
+.dashboard .category-item h2,
+.dashboard .expense-item h2 {
+  font-size: 1.5em;
+}
+
+.dashboard .category-item h3,
+.dashboard .expense-item h3 {
+  font-size: 1.25em;
+}
+
+.dashboard .expense-item {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .dashboard .destroy {
   margin-left: 5%;
 }
 
-.dashboard .categories li:first-child {
-  border-top: 1px dashed black;
+.dashboard .category:first-child {
+  border-top: 1px solid black;
 }
 
 .dashboard .categories {
@@ -178,10 +205,12 @@ nav a {
     text-align: center;
   }
 
+  .dashboard .category-form,
   .dashboard .category-form {
     margin-left: 0;
   }
 
+  .dashboard .category-form input,
   .dashboard .category-form input {
     display: block;
     margin: .5em auto;
@@ -198,7 +227,7 @@ nav a {
     margin-left: 0;
   }
 
-  .dashboard h2 {
+  .dashboard h3 {
     margin-left: 0;
   }
 }

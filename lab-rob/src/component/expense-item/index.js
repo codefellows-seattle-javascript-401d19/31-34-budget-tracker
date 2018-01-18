@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import ExpenseForm from '../expense-form';
-import * as expenseActions from '../../action/expense';
+import {updateAction, destroyAction} from '../../action/expense';
 
 class ExpenseItem extends React.Component {
   render() {
@@ -15,9 +15,9 @@ class ExpenseItem extends React.Component {
     return (
       <div className='expense-item'>
         <ExpenseForm expense={expense} onComplete={expenseUpdate} />
-        <h3>Expense: {expense.name}</h3>
+        <button onClick={expenseDestroy.bind(null, expense)} className='destroy'>Remove Expense</button>
+        <h3>{expense.name}</h3>
         <h4>Price: ${Number(expense.price).toLocaleString()}</h4>
-        <button onClick={expenseDestroy.bind(null, expense)} className='destroy'>Destroy!</button>
       </div>
     );
   }
@@ -26,8 +26,8 @@ class ExpenseItem extends React.Component {
 let mapStateToProps = () => ({});
 
 let mapDispatchToProps = dispatch => ({
-  expenseUpdate: (data) => dispatch(expenseActions.updateAction(data)),
-  expenseDestroy: (data) => dispatch(expenseActions.destroyAction(data)),
+  expenseUpdate: (data) => dispatch(updateAction(data)),
+  expenseDestroy: (data) => dispatch(destroyAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseItem);

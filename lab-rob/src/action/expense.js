@@ -21,6 +21,7 @@ export const destroyAction = expense => ({
   payload: expense,
 });
 
-export const clearAction = () => ({
+export const clearAction = categoryId => ({
   type: 'EXPENSE_CLEAR',
+  payload: categoryId,
 });

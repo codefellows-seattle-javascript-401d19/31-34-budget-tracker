@@ -1,7 +1,7 @@
 let emptyState = {};
 
 export default (state = emptyState, {type, payload}) => {
-  let extractIf = {
+  let setVars = {
     EXPENSE_CREATE: true,
     EXPENSE_UPDATE: true,
     EXPENSE_DESTROY: true,
@@ -9,7 +9,7 @@ export default (state = emptyState, {type, payload}) => {
 
   let categoryId = null, categoryExpenses = null, updatedExpenses = null, updatedState = null;
 
-  if(extractIf[type]) {
+  if(setVars[type]) {
     categoryId = payload.categoryId;
     categoryExpenses = state[categoryId];
   }
@@ -33,6 +33,8 @@ export default (state = emptyState, {type, payload}) => {
     case 'EXPENSE_DESTROY':
       updatedExpenses = categoryExpenses.filter(expense => expense.id !== payload.id);
       return {...state, [categoryId]: updatedExpenses};
+    case 'EXPENSE_CLEAR':
+      return {...state, [payload]: []};
     default:
       return state;
   }

@@ -33,13 +33,13 @@ class ExpenseForm extends React.Component {
     this.setState(emptyState);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.expense)
-      this.setState(nextProps.expense);
+  componentWillReceiveProps(props) {
+    if(props.expense)
+      this.setState(props.expense);
   }
 
   render() {
-    let buttonText = this.props.expense ? 'Update' : 'Create';
+    let buttonText = (this.props.expense ? 'Update' : 'Create') + ' Expense';
 
     return (
       <form className='expense-form' onSubmit={this.handleSubmit}>

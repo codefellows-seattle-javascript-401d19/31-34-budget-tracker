@@ -28,13 +28,13 @@ class CategoryForm extends React.Component {
     this.setState(emptyState);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if(nextProps.category)
-      this.setState(nextProps.category);
+  componentWillReceiveProps(props) {
+    if(props.category)
+      this.setState(props.category);
   }
 
   render() {
-    let buttonText = this.props.category ? 'Update' : 'Create';
+    let buttonText = (this.props.category ? 'Update' : 'Create') + ' Category';
 
     return (
       <form className='category-form' onSubmit={this.handleSubmit}>

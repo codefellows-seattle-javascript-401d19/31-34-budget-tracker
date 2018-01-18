@@ -26,10 +26,18 @@
       display: inline-block;
     }
 
-    h2, .expense-item h3 {
+    h2, h3 {
       font-weight: bold;
       margin-right: 5%;
       padding-left: 5%;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    h3 {
+      font-size: 1.25em;
     }
   }
 
@@ -48,10 +56,6 @@
 
   .categories {
     margin-bottom: 1em;
-  }
-
-  .expenses {
-    border-top: 1px dashed black;
   }
 }
 
@@ -79,7 +83,7 @@
       margin-left: 0;
     }
 
-    h2 {
+    h3 {
       margin-left: 0;
     }
   }
