@@ -21,7 +21,7 @@ class Dashboard extends React.Component {
         <CategoryForm onComplete={categoryCreate} />
         <ul className='categories'>
           {categories.map(category => (
-            <li key={category.id}>
+            <li className='category' key={category.id}>
               <CategoryItem category={category} />
             </li>
           ))}

@@ -4,7 +4,7 @@
     margin-right: 5%;
   }
 
-  .category-form {
+  .category-form, .expense-form {
     margin-left: 5%;
     margin-top: 1em;
     margin-bottom: 0.5em;
@@ -16,31 +16,42 @@
   }
 
   .category-item {
-    border-bottom: 1px dashed black;
-    padding-top: 1em;
+    border-bottom: 1px solid black;
+  }
+
+  .category-item, .expense-item {
     padding-bottom: 1em;
 
-    h2, h3 {
+    h2, h3, h4 {
       display: inline-block;
     }
 
-    h2 {
+    h2, .expense-item h3 {
       font-weight: bold;
       margin-right: 5%;
       padding-left: 5%;
     }
+  }
+
+  .expense-item {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   
   .destroy {
     margin-left: 5%;
   }
 
-  .categories li:first-child {
-    border-top: 1px dashed black;
+  .category:first-child {
+    border-top: 1px solid black;
   }
 
   .categories {
     margin-bottom: 1em;
+  }
+
+  .expenses {
+    border-top: 1px dashed black;
   }
 }
 
@@ -48,7 +59,7 @@
   .dashboard {
     text-align: center;
 
-    .category-form {
+    .category-form, .category-form {
       margin-left: 0;
 
       input {

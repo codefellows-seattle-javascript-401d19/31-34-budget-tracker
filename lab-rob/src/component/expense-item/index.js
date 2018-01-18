@@ -15,7 +15,7 @@ class ExpenseItem extends React.Component {
     return (
       <div className='expense-item'>
         <ExpenseForm expense={expense} onComplete={expenseUpdate} />
-        <h3>{expense.name}</h3>
+        <h3>Expense: {expense.name}</h3>
         <h4>Price: ${Number(expense.price).toLocaleString()}</h4>
         <button onClick={expenseDestroy.bind(null, expense)} className='destroy'>Destroy!</button>
       </div>
