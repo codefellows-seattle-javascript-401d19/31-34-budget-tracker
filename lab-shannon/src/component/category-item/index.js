@@ -21,8 +21,8 @@ class CategoryItem extends React.Component{
     return(
       categories.map((category, index) =>
         <div key={index} className='category-item'>
-          <h4>Category: {category.label}</h4>
-          <p>Budget: ${category.budget}</p>
+          <h2>Category: {category.label}</h2>
+          <h3><em>Budget:</em> ${category.budget}</h3>
           <button onClick={() => this.props.categoryDestroy(category)}> Delete Category </button>
           <CategoryForm category={category} onComplete={categoryUpdate}/>
           <ExpenseForm category={category} onComplete={expenseCreate}/>

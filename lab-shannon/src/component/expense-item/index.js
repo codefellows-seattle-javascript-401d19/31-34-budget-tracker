@@ -16,7 +16,7 @@ class ExpenseItem extends React.Component{
       this.props.expenses.map((expense, index) => {
         return(
           <div key={index}>
-            <p>{expense.name}: ${expense.price}</p>
+            <h4><em>{expense.name}:</em> ${expense.price}</h4>
             <ExpenseForm expense={expense} onComplete={expenseUpdate}/>
             <button onClick={() => expenseDestroy(expense)}>Delete Expense</button>
           </div>
