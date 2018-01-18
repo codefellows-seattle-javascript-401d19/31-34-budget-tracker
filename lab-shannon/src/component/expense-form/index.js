@@ -2,7 +2,7 @@ import React from 'react';
 
 let emptyState = {
   name: '',
-  price: 0,
+  price: '',
 };
 
 class ExpenseForm extends React.Component{
@@ -36,6 +36,7 @@ class ExpenseForm extends React.Component{
     return (
       <form onSubmit={this.onSubmit}>
         <input
+          required
           type='text'
           name='name'
           value={this.state.name}
@@ -43,6 +44,7 @@ class ExpenseForm extends React.Component{
           onChange={this.handleChange}
         />
         <input
+          required
           type='number'
           step='.01'
           name='price'

@@ -3,7 +3,7 @@ import './category-form.scss';
 
 let emptyState = {
   label: '',
-  budget: 0,
+  budget:'',
 };
 
 class CategoryForm extends React.Component{
@@ -36,6 +36,7 @@ class CategoryForm extends React.Component{
     return(
       <form onSubmit={this.onSubmit} className='category-form'>
         <input
+          required
           type='text'
           name='label'
           value={this.state.label}
@@ -43,6 +44,7 @@ class CategoryForm extends React.Component{
           onChange={this.handleChange}
         />
         <input
+          required
           type='number'
           step='.01'
           name='budget'
