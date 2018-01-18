@@ -4,10 +4,10 @@ export default (state = emptyState, {type, payload}) => {
   let categoryID, categoryExpenses, updatedExpenses, updatedState;
   
   switch (type) {
-    case 'SECTION_CREATE':
+    case 'CATEGORY_CREATE':
       return {...state, [payload.id]: []};
     
-    case 'SECTION_REMOVE':
+    case 'CATEGORY_REMOVE':
       updatedState = {...state};
       delete updatedState[payload.id];
 
