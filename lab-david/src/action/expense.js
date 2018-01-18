@@ -1,12 +1,11 @@
 
 const uuidv1 = require('uuid/v1');
 
-export const createAction = ({name, price, budgetTotal}) => ({
+export const createAction = ({name, price}) => ({
   type : 'EXPENSE_CREATE',
   payload : {
     name,
     price,
-    budgetTotal,
     id: uuidv1(),
     timeStamp: new Date(), 
   },

@@ -2,14 +2,14 @@ let emptyState = {};
 
 export default(state = emptyState, action) => {
   let {type, payload} = action;
-  let expenseID, expenseCategories, updatedCategories;
+  let expenseID, updatedState, expenseCategories, updatedCategories, categoryID, updatedExpenses, categoryExpenses;
 
   switch(type){
     case 'CATEGORY_CREATE':
-      return {...state, [payload.id] : []};
+      return {...state, [payload.id] : [] };
     case 'CATEGORY_REMOVE':
     // TODO error checking
-      let updatedState = {...state};
+      updatedState = {...state};
       delete updatedState[payload.id];
       return updatedState;
 
