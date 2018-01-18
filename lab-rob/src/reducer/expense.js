@@ -4,7 +4,7 @@ export default (state = emptyState, {type, payload}) => {
   let extractIf = {
     EXPENSE_CREATE: true,
     EXPENSE_UPDATE: true,
-    EXPENSE_REMOVE: true,
+    EXPENSE_DESTROY: true,
   };
 
   let categoryId = null, categoryExpenses = null, updatedExpenses = null, updatedState = null;
@@ -22,6 +22,8 @@ export default (state = emptyState, {type, payload}) => {
       delete updatedState[payload.id];
       return updatedState;
     }
+    case 'CATEGORY_CLEAR':
+      return emptyState;
     case 'EXPENSE_CREATE':
       updatedExpenses = [...categoryExpenses, payload];
       return {...state, [categoryId]: updatedExpenses};

@@ -11,9 +11,7 @@ class Dashboard extends React.Component {
   render() {
     let {
       categories, 
-      categoryCreate, 
-      categoryUpdate, 
-      categoryDestroy,
+      categoryCreate,
       categoryClear,
     } = this.props;
 
@@ -24,7 +22,7 @@ class Dashboard extends React.Component {
         <ul className='categories'>
           {categories.map(category => (
             <li key={category.id}>
-              <CategoryItem category={category} categoryDestroy={categoryDestroy} categoryUpdate={categoryUpdate} />
+              <CategoryItem category={category} />
             </li>
           ))}
         </ul>
