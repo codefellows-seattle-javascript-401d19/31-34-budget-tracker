@@ -1,5 +1,5 @@
 ## Purpose
-This program helps you track your budget for different categories of items. You can create, edit, and delete category objects following the methods outlined below.
+This program helps you track your budget for different categories of items and add expense items to different categories. You can create, edit, and delete category objects following the methods outlined below.
 
 ## Set Up
 1. clone the repo into whatever directory you choose
@@ -8,7 +8,7 @@ This program helps you track your budget for different categories of items. You 
 4. follow the link provided see the webpage
 
 ## Methods
-  Use the 'Add category' button to add a new object with a category name and budget value. Use the 'Update category' button to make edits to a category's name or budget. Use the 'Delete' button to remove a category.
+  Use the 'Add category' button to add a new object with a category name and budget value. Use the 'Update category' button to make edits to a category's name or budget. Use the 'Delete category' button to remove a category and all of its expenses. For expenses use the 'Add expense' button to add an expense to a particular category, the 'Update expense' button to edit an expense, or the 'delete expense' button to remove an expense.
 
 ## Technologies Used
   babel-core
@@ -29,6 +29,7 @@ This program helps you track your budget for different categories of items. You 
   react-dom
   react-redux
   react-router-dom
+  redux-devtools-extension
   resolve-url-loader
   sass-loader
   style-loader
