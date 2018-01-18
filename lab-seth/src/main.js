@@ -8,14 +8,12 @@ import reducer from './reducer';
 
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-// let store = createStore(reducer);
-
 let middleware = {};
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 store.subscribe(() => {
-  console.log('__STATE__', store.getState());
+  // console.log('__STATE__', store.getState());
 });
 
 const container = document.createElement('div');

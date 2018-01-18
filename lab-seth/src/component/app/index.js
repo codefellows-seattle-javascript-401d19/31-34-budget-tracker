@@ -3,8 +3,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Landing from '../landing';
 import './app.scss'
 
-
-
 class App extends React.Component {
   render() {
     return (
