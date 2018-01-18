@@ -14,16 +14,16 @@ class ExpenseItem extends React.Component {
     return (
       <div className='expense'>
         <h4> {expense.name} </h4>
-        <h4> {expense.amount} </h4>
-        <button onClick={() => expenseRemove(expense)}>delete</button>
+        <h4> ${expense.amount} </h4>
         <ExpenseForm expense={expense} onComplete={expenseUpdate} />
+        <button className='delete-button' onClick={() => expenseRemove(expense)}>remove this expense</button>
       </div>
     );
   }
 
 }
 
-let mapStateToProps = () => {};
+let mapStateToProps = () => ({});
 
 let mapDispatchToProps = (dispatch) => ({
   expenseRemove: (data) => dispatch(expense.removeAction(data)),

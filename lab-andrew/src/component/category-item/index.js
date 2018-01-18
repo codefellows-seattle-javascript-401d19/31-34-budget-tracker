@@ -10,7 +10,7 @@ import * as categoryActions from '../../action/category';
 
 class CategoryItem extends React.Component {
   render() {
-    let {
+    const {
       expenses,
       category,
       expenseCreate,
@@ -18,7 +18,9 @@ class CategoryItem extends React.Component {
       categoryRemove,
     } = this.props;
 
-    let categoryExpenses = expenses[category.id];
+    const categoryExpenses = expenses[category.id];
+    const header = categoryExpenses.length ? <h2>Current Expenses:</h2> : null;
+
 
     return(
       <div className='category-item'>
@@ -26,7 +28,9 @@ class CategoryItem extends React.Component {
         <h2 className='item-text'> ${category.budget} </h2>
         <CategoryForm category={category} onComplete={categoryUpdate} />
         <button className='delete-button' onClick={() => categoryRemove(category)}> delete </button>
+        <h3>Add Expense</h3>
         <ExpenseForm category={category} onComplete={expenseCreate} />
+        {header}
         {
           categoryExpenses.map(expense =>
             <ExpenseItem expense={expense} key={expense.id}/>
@@ -37,11 +41,11 @@ class CategoryItem extends React.Component {
   }
 }
 
-let mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({
   expenses: state.expenses,
 });
 
-let mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   expenseCreate: (data) => dispatch(expenseActions.createAction(data)),
   categoryUpdate: (data) => dispatch(categoryActions.updateAction(data)),
   categoryRemove: (data) => dispatch(categoryActions.removeAction(data)),
