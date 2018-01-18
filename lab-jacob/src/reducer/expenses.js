@@ -5,6 +5,7 @@ export default (state = emptyState, {type, payload}) => {
 
   switch(type){
     case 'CATEGORY_CREATE':
+    
       return {...state, [payload.id] : [] }
     case 'CATEGORY_REMOVE':
       let updatedState = {...state}
