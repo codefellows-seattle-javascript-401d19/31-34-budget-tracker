@@ -1,16 +1,13 @@
 import React from 'react';
 
-let emptyState = {
-  name: '',
-  budget: '',
-};
+let emptyState = {content : '', name : ''};
 
-class CategoryForm extends React.Component{
+class ExpenseForm extends React.Component {
   constructor(props){
     super(props);
-    this.state = this.props.category || emptyState;
+    this.state = props.expense || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -25,23 +22,29 @@ class CategoryForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.onComplete(this.state);
+    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+
+    this.props.onComplete({
+      ...this.state,
+      categoryID,
+    });
+
     this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.category)
-      this.setState(nextProps.category);
+    if(nextProps.expense)
+      this.setState(nextProps.expense);
   }
 
   render(){
-    let buttonText = this.props.category ? 'update category' : 'create category';
+    let buttonText = this.props.expense ? 'update expense' : 'create expense';
 
     return(
       <form
+        className='expense-form'
         onSubmit={this.handleSubmit}
-        className='category-form'>
-
+      >
         <input
           type='text'
           name='name'
@@ -49,17 +52,19 @@ class CategoryForm extends React.Component{
           value={this.state.name}
           onChange={this.handleChange}
         />
+
         <input
           type='text'
-          name='budget'
-          placeholder='budget'
-          value={this.state.budget}
+          name='content'
+          placeholder='content'
+          value={this.state.content}
           onChange={this.handleChange}
         />
-        <button className="submitButton" type='submit'> {buttonText} </button>
+
+        <button type='submit'> {buttonText} </button>
       </form>
     );
   }
 }
 
-export default CategoryForm;
+export default ExpenseForm;

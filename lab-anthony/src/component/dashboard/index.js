@@ -15,12 +15,10 @@ class Dashboard extends React.Component{
 
     return(
       <div className='dashboard'>
-        <CategoryForm processCategory={categoryCreate} />
-        {categories.map((category, i) =>{
-          return(
-            <CategoryItem key={i} category={category} categoryRemove={categoryRemove} categoryUpdate={categoryUpdate}/>
-          );
-        })}
+        <CategoryForm onComplete={categoryCreate} />
+        {categories.map((category, i) =>
+          <CategoryItem key={i} category={category}/>
+        )}
       </div>
     );
   }
@@ -28,15 +26,13 @@ class Dashboard extends React.Component{
 
 let mapStateToProps = (state) => {
   return{
-    categories : state,
+    categories : state.categories,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate: (data) => dispatch(category.createAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data)),
-    categoryRemove: (data) => dispatch(category.removeAction(data)),
   };
 };
 

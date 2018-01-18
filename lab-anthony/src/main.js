@@ -6,17 +6,12 @@ import {Provider} from 'react-redux';
 import './style/main.scss';
 
 import App from './component/app';
-import categoriesReducer from './reducer/categories.js';
+import reducer from './reducer';
 
-let store = createStore(categoriesReducer, applyMiddleware(logger));
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-// show state
-
-store.subscribe(() => {
-  console.log('__STATE__',store.getState());
-});
-
-//
+let middleware = {};
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 const container = document.createElement('div');
 document.body.appendChild(container);
