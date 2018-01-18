@@ -15,10 +15,9 @@ class ExpenseForm extends React.Component {
   }
 
   handleChange(event){
-    let {name, price} = event.target;
+    let{name, value} = event.target;
     this.setState({
-      [name] : value,
-      [price] : value,
+      [name] : value
     });
   }
 
