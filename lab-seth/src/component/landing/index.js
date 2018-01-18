@@ -14,7 +14,6 @@ class Landing extends React.Component{
       categoryDestroy,
     } = this.props;
 
-    console.log(categories);
     return (
       <div className='landing'>
         <CategoryForm className='form' onComplete={categoryCreate} />
@@ -36,7 +35,7 @@ class Landing extends React.Component{
 let mapStateToProps = (state) => {
   //creating props in landing
   return {
-    categories : state,
+    categories : state.categories,
   }
 };
 

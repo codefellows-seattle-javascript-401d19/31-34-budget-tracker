@@ -1,6 +1,6 @@
-import React form 'react';
+import React from 'react';
 
-let emptyState = {content : ''};
+let emptyState = {name : '', price: 0};
 
 class ExpenseForm extends React.Component {
   constructor(props){
@@ -8,7 +8,7 @@ class ExpenseForm extends React.Component {
 
     this.state = props.expense || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(CardForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
     for (let functionName of memberFunctions) {
       if (functionName.startsWith('handle')) {
         this[functionName] = this[functionName].bind(this);
@@ -45,7 +45,7 @@ class ExpenseForm extends React.Component {
 
 
   render() {
-    let buttonText = this.props.category ? 'update expense' : 'create expense';
+    let buttonText = this.props.expense ? 'update expense' : 'create expense';
 
     return (
       <form
