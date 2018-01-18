@@ -24,7 +24,7 @@ class CategoryItem extends React.Component {
       <div className='category-item'>
         <h2> {category.name}: ${category.budget} / {category.period} </h2>
         <CategoryForm category={category} onComplete={categoryUpdate} />
-        <button onClick={() => categoryDestroy(category)}> Delete </button>
+        <button onClick={() => categoryDestroy(category)}> Delete This Category</button>
         <ExpenseForm category={category} onComplete={expenseCreate} />
         {
           categoryExpenses.map((expense, index) => 

@@ -22,9 +22,7 @@ class CategoryForm extends React.Component {
 
   handleChange(event){
     let {name, value} = event.target;
-    
-    console.log('Targets: ', name, value);
-    
+        
     this.setState({
       [name]: value,
     });
@@ -43,7 +41,7 @@ class CategoryForm extends React.Component {
 
 
   render() {
-    let buttonText = this.props.category ? 'update category' : 'create category';
+    let buttonText = this.props.category ? 'Update' : 'Create Category';
 
     return (
       <form
@@ -68,7 +66,7 @@ class CategoryForm extends React.Component {
           required
         />
 
-        <select value={this.state.period} onChange={this.handleChange} name='period' defaultValue='' required>
+        <select value={this.state.period} onChange={this.handleChange} name='period' required>
           <option value="" disabled>Period</option>
           <option value="month">Month</option>
           <option value="week">Week</option>

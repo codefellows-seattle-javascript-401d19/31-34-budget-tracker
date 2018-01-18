@@ -1,4 +1,4 @@
-# 31: Budget Tracker with React & Redux
+# 32: Budget & Expect Tracker with React & Redux
 
 This app allows a user to input a category and budget for that category through a basic form and save it to the state of of the landing, where it dynamically gets rendered to the page using React. The Category can be updated or deleted once created using the same form.
 

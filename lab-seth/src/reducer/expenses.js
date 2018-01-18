@@ -1,4 +1,4 @@
-const emptyState = [];
+const emptyState = {};
 
 export default (state = emptyState, { type, payload }) => {
   let categoryID, categoryExpenses, updatedExpenses;

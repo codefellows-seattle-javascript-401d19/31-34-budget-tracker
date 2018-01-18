@@ -19,8 +19,6 @@ class ExpenseForm extends React.Component {
   handleChange(event) {
     let { name, value } = event.target;
 
-    console.log('Targets: ', name, value);
-
     this.setState({
       [name]: value,
     });
@@ -45,7 +43,7 @@ class ExpenseForm extends React.Component {
 
 
   render() {
-    let buttonText = this.props.expense ? 'update expense' : 'create expense';
+    let buttonText = this.props.expense ? 'Update' : 'Create Expense';
 
     return (
       <form
