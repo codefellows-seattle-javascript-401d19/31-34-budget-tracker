@@ -26,7 +26,7 @@ class Expense extends React.Component {
     let editingJSX = <ExpenseForm onComplete={this.handleUpdate} expense={expense} />;
     let contentJSX = 
       <div onDoubleClick={() => this.setState({ editing : true })} >
-        <h3>{expense.name}</h3>
+        <h4>{expense.name}</h4>
         <p> ${expense.price}</p>
       </div>;
     let renderJSX = this.state.editing ? editingJSX : contentJSX;

@@ -6,6 +6,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="app">
+        <h2>Budget Tracker</h2>
         <BrowserRouter>
           <div>
             <Route exact path="/" component={Dashboard} />

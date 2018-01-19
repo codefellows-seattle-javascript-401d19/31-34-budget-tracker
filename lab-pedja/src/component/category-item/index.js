@@ -35,12 +35,12 @@ class CategoryItem extends React.Component {
 
     let editingJSX = <CategoryForm onComplete={this.handleUpdate} category={category} />;
     let contentJSX =
-      <div>
-        <button className="delete" onClick={categoryDestroy.bind(null, category)}> X </button>
-        <h3>{category.name}</h3>
+      <div onDoubleClick={() => this.setState({ editing : true })} >
+        <button className="delete" onClick={categoryDestroy.bind(null, category)}> delete </button>
+        <h2>{category.name}</h2>
         <p>${category.budget}</p>
       </div>
-    let renderJSX = this.state.editing ? editingJSX : renderJSX;
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
 
     return (
       <div className="category-item">
