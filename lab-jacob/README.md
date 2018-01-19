@@ -1,4 +1,4 @@
-# 31-Lab Redux
+# 33-Lab Redux-Middleware
  ###
 
  ```
