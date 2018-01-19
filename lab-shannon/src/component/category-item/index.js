@@ -9,6 +9,17 @@ import './category-item.scss';
 
 
 class CategoryItem extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {editing : false};
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  handleUpdate(category){
+    this.props.categoryUpdate(category);
+    this.setState({editing : false});
+  }
+
   render(){
     let {
       expenses,
@@ -19,16 +30,26 @@ class CategoryItem extends React.Component{
     } = this.props;
 
     return(
-      categories.map((category, index) =>
-        <div key={index} className='category-item'>
+      categories.map((category, index) => {
+        let editingJSX = <CategoryForm category={category} onComplete={this.handleUpdate}/>;
+        let nonEditingJSX =
+        <div>
           <h2>Category: {category.label}</h2>
           <h3><em>Budget:</em> ${category.budget}</h3>
-          <button onClick={() => this.props.categoryDestroy(category)}> Delete Category </button>
-          <CategoryForm category={category} onComplete={categoryUpdate}/>
-          <ExpenseForm category={category} onComplete={expenseCreate}/>
-          <ExpenseItem expenses={expenses[category.id]}/>
-        </div>
-      )
+        </div>;
+        let shownJSX = this.state.editing ? editingJSX : nonEditingJSX;
+
+        return(
+          <main key={index} onDoubleClick={() => this.setState({editing : true})}>
+            <div className='category-item'>
+              {shownJSX}
+              <button onClick={() => this.props.categoryDestroy(category)}> Delete Category </button>
+              <ExpenseForm category={category} onComplete={expenseCreate}/>
+              <ExpenseItem expenses={expenses[category.id]}/>
+            </div>
+          </main>
+        );
+      })
     );
   }
 }

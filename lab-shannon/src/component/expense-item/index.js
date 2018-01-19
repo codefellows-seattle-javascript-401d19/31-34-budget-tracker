@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 class ExpenseItem extends React.Component{
   constructor(props){
     super(props);
-    this.state = {editing: false};
+    this.state = {editing : false};
     this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   handleUpdate(expense){
     this.props.expenseUpdate(expense);
-    this.setState({editing: false});
+    this.setState({editing : false});
   }
 
   render(){
@@ -28,7 +28,7 @@ class ExpenseItem extends React.Component{
         let shownJSX = this.state.editing ? editingJSX : nonEditingJSX;
 
         return(
-          <main key={index} onDoubleClick={() => this.setState({editing: true})}>
+          <main key={index} onDoubleClick={() => this.setState({editing : true})}>
             <div>
               {shownJSX}
               <button onClick={() => expenseDestroy(expense)}>Delete Expense</button>
