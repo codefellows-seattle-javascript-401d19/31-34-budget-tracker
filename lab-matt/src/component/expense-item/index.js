@@ -7,7 +7,10 @@ class ExpenseItem extends React.Component {
   render() {
     let { expense, expenseUpdate, expenseRemove } = this.props;
 
-    let price = expense.price.toString().startsWith('-') ? expense.price.toString().replace('-', '-$') : `$${expense.price}`;
+    let price = expense.price.toString().startsWith('-') ?
+      expense.price.toString().replace('-', '-$') : 
+      `$${expense.price}`;
+      
     let title = expense.title || `'no title'`;
     return (
       <div className='expense-item' >

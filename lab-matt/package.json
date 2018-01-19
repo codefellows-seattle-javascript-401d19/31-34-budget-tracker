@@ -7,7 +7,8 @@
     "watch": "webpack-dev-server --inline --hot",
     "build": "webpack",
     "test": "jest -i --coverage",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "checkLineLength": "grep -Ern '^ *.{100}' ./src/*"
   },
   "keywords": [],
   "author": "",

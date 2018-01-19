@@ -34,7 +34,13 @@ class CategoryForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} className='category-form'>
-        <input onChange={this.handleChange} type="text" name='title' placeholder='title' value={this.state.title} />
+        <input 
+          onChange={this.handleChange} 
+          type="text" 
+          name='title' 
+          placeholder='title' 
+          value={this.state.title} 
+        />
         <button type='submit'> {buttonText} </button>
       </form>
     );

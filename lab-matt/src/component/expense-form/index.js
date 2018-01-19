@@ -28,7 +28,9 @@ class ExpenseForm extends React.Component {
       event.preventDefault();
       let {title, price} = this.state;
 
-      let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+      let categoryID = this.props.category ? 
+        this.props.category.id : 
+        this.props.expense.categoryID;
 
       price = price.toString().replace(/^(-|0)?0*/, '$1');
       price = isNaN(Number(price)) ? 0 : Number(price);
@@ -53,8 +55,21 @@ class ExpenseForm extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} className='expense-form'>
-        <input onChange={this.handleChange} type="text" name='title' placeholder='title' value={this.state.title} />
-        <input onChange={this.handleChange} type="text" name='price' placeholder='price' value={this.state.price} />
+        <input 
+          onChange={this.handleChange} 
+          type="text" 
+          name='title' 
+          placeholder='title' 
+          value={this.state.title} 
+        />
+
+        <input 
+          onChange={this.handleChange} 
+          type="text" 
+          name='price' 
+          placeholder='price' 
+          value={this.state.price} 
+        />
         <button type='submit'> {buttonText} </button>
       </form>
     );
