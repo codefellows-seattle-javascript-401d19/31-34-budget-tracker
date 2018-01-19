@@ -6,7 +6,7 @@ let emptyState = {
 };
 
 class CategoryForm extends React.Component {
-  constructor(props) {
+  constructor(props){
     super(props);
     this.state = this.props.category || emptyState;
     let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);

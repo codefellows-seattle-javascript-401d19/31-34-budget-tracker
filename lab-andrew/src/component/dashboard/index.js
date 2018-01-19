@@ -36,17 +36,17 @@ class Dashboard extends React.Component {
   }
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = state => {
   return {
     categories: state.categories,
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = dispatch => {
   return {
-    categoryCreate: (data) => dispatch(categoryAction.createAction(data)),
-    categoryUpdate: (data) => dispatch(categoryAction.updateAction(data)),
-    categoryRemove: (data) => dispatch(categoryAction.removeAction(data)),
+    categoryCreate: data => dispatch(categoryAction.createAction(data)),
+    categoryUpdate: data => dispatch(categoryAction.updateAction(data)),
+    categoryRemove: data => dispatch(categoryAction.removeAction(data)),
   };
 };
 
