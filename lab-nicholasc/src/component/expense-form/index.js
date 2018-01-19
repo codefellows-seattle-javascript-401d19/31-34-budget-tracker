@@ -8,7 +8,7 @@ let emptyState = {
 class ExpenseForm extends React.Component{
   constructor(props){
     super(props);
-    this.state = this.props.category || emptyState;
+    this.state = props.expense || emptyState;
 
     let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
     for(let functionName of memberFunctions){
@@ -26,18 +26,22 @@ class ExpenseForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.handleComplete(this.state);
+    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID;
+    this.props.handleComplete({
+      ...this.state,
+      categoryID,
+    });
     this.setState(emptyState);
   }
 
   componentWillReceiveProps(nextProps){
-    if(nextProps.category)
-      this.setState(nextProps.category);
+    if(nextProps.expense)
+      this.setState(nextProps.expense);
   }
 
   render() {
-    let buttonText = this.props.category ? 'update category' : 'create category';
-    let nameText = this.props.category ? this.props.category.name : 'Category Form';
+    let buttonText = this.props.expense ? 'update expense' : 'create expense';
+    let nameText = this.props.expense ? this.props.expense.name : 'Expense Form';
 
     return(
       <form
@@ -52,15 +56,16 @@ class ExpenseForm extends React.Component{
           onChange={this.handleChange}
           required={true}
         />
+
         <input
           type="number"
-          name="budget"
+          name="price"
           placeholder="$0"
-          value={this.state.budget}
+          value={this.state.price}
           onChange={this.handleChange}
           required={true}
         />
-        <button onClick={this.handleSubmit}> {buttonText} </button>
+        <button type="submit"> {buttonText} </button>
 
       </form>
     );
