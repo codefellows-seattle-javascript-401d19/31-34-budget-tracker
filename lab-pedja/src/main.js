@@ -1,3 +1,4 @@
+// TODO: import main.scss
 import React  from "react";
 import ReactDom from "react-dom";
 import { createStore, applyMiddleware } from "redux";
@@ -11,10 +12,6 @@ let middleware = {};
 const store = createStore(reducer, composeWithDevTools(
   applyMiddleware(...middleware),
 ));
-
-store.subscribe(() => {
-  console.log('__STATE__', store.getState());
-});
 
 const container = document.createElement('div');
 document.body.appendChild(container);
