@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ExpenseForm from '../expense-form';
-import * as expense from '../../action/expense';
+import * as expenseActions from '../../action/expense';
 
 class Expense extends React.Component{
   render(){
@@ -25,8 +25,8 @@ class Expense extends React.Component{
 let mapStateToProps = (state) => ({});
 
 let mapDispatchToProps = (dispatch) => ({
-  expenseRemove : (data) => dispatch(expense.removeAction(data)),
-  expenseUpdate : (data) => dispatch(expense.updateAction(data)),
+  expenseRemove : (data) => dispatch(expenseActions.removeAction(data)),
+  expenseUpdate : (data) => dispatch(expenseActions.updateAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Expense);

@@ -42,8 +42,8 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   expenseCreate : (data) => dispatch(expenseActions.createAction(data)),
-  categoryUpdate : (data) => dispatch(expenseActions.updateAction(data)),
-  categoryRemove : (data) => dispatch(expenseActions.removeAction(data)),
+  categoryUpdate : (data) => dispatch(categoryActions.updateAction(data)),
+  categoryRemove : (data) => dispatch(categoryActions.removeAction(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

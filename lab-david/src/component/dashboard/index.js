@@ -44,8 +44,6 @@ let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate : (data) => dispatch(categoryActions.createAction(data)),
     categoryUpdate : (data) => dispatch(categoryActions.updateAction(data)),
-    categoryRemove : (data) => dispatch(categoryActions.removeAction(data)),
-
   };
 };
 
