@@ -8,6 +8,24 @@ import * as expenseActions from '../../action/expense';
 import * as categoryActions from '../../action/category';
 
 class CategoryItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {editing : false};
+
+
+    let memberFunctions = Object.getOwnPropertyNames(CategoryItem.prototype);
+    for (let functionName of memberFunctions) {
+      if (functionName.startsWith('handle')) {
+        this[functionName] = this[functionName].bind(this);
+      }
+    }
+  }
+
+  handleUpdate(category){
+    this.props.categoryUpdate(category);
+    this.setState({editing : false});
+  }
+
   render() {
     let {
       expenses,
@@ -19,19 +37,31 @@ class CategoryItem extends React.Component {
 
     let categoryExpenses = expenses[category.id];
 
-    return (
+    let contentJSX =
+      <div>
+        <h2 onDoubleClick={() => this.setState({editing : true})}>
+        {category.name}: ${category.budget} / {category.period}</h2><button className='delete-button' onClick={() => categoryDestroy(category)}> X </button>
+      </div>;
+      
+    let editingJSX =
+      <div>
+        <h2 onDoubleClick={() => this.setState({ editing: true })}>
+        {category.name}: ${category.budget} / {category.period}</h2>  
+        <CategoryForm category={category} onComplete={this.handleUpdate} />
+      </div>;
 
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
+
+    return (
       <div className='category-item'>
-        <div>
-          <h2> {category.name}: ${category.budget} / {category.period} </h2>
-          <CategoryForm category={category} onComplete={categoryUpdate} />
-          <button onClick={() => categoryDestroy(category)}> Delete This Category</button>
-        </div>
+        {renderJSX}
         <ExpenseForm category={category} onComplete={expenseCreate} />
+        <main className='expense-container'>
         {
           categoryExpenses.map((expense, index) => 
             <ExpenseItem key={index} expense={expense} />)
         }
+        </main>
       </div>
     );
   } 

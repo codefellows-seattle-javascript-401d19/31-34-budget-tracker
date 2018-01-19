@@ -4,6 +4,24 @@ import ExpenseForm from '../expense-form'
 import * as expense from '../../action/expense';
 
 class ExpenseItem extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {editing : false};
+
+    let memberFunctions = Object.getOwnPropertyNames(ExpenseItem.prototype);
+    for (let functionName of memberFunctions) {
+      if (functionName.startsWith('handle')) {
+        this[functionName] = this[functionName].bind(this);
+      }
+    }
+  }
+
+  handleUpdate(expense){
+    this.props.expenseUpdate(expense);
+    this.setState({editing : false});
+  }
+
   render() {
     let {
       expense, // this is coming from the actual props
@@ -11,22 +29,26 @@ class ExpenseItem extends React.Component {
       expenseUpdate,
     } = this.props;
 
-    return (
+    let contentJSX = <p> {expense.name}: ${expense.price} </p>;
+    let editingJSX = <ExpenseForm expense={expense} onComplete={this.handleUpdate} />;
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
 
+    return (
       <div className='expense-item'>
-        <p> {expense.name}: ${expense.price} </p>
-        <ExpenseForm expense={expense} onComplete={expenseUpdate} />
-        <button onClick={() => expenseRemove(expense)}> Delete This Expense </button>
+        <main onDoubleClick={() => this.setState({editing : true})}>
+        {renderJSX}
+        </main>
+        <button className='delete-button' onClick={() => expenseRemove(expense)}> X </button>
       </div>
     );
   }
 }
 
-let mapStateToProps = (state) => ({});
+// let mapStateToProps = (state) => ({});
 
 let mapDispatchToProps = (dispatch) => ({
   expenseRemove: (data) => dispatch(expense.removeAction(data)),
   expenseUpdate: (data) => dispatch(expense.updateAction(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExpenseItem);
+export default connect(null, mapDispatchToProps)(ExpenseItem);
