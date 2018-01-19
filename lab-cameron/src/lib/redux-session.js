@@ -3,7 +3,7 @@ export default store => next => action => {
   const state = store.getState();
 
   for (let key in state) {
-    localStorage[key] = JSON.stringify(state[key]);
+    sessionStorage[key] = JSON.stringify(state[key]);
   }
 
   return result;
