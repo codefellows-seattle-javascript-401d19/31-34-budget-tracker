@@ -13,7 +13,7 @@ class CategoryItem extends React.Component {
     let title = category.title !== '' ? category.title : `'no title'`;
 
     return(
-      <div>
+      <div className='category-item'>
         <h2> {title} </h2>
         <button onClick={() => categoryRemove(category)}> delete </button>
         <CategoryForm category={category} onComplete={categoryUpdate} />
