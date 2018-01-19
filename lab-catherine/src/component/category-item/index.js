@@ -1,3 +1,4 @@
+import './_category_item.scss';
 import React from 'react';
 import CategoryForm from '../category-form';
 import * as categoryActions from '../../action/category';
@@ -36,7 +37,7 @@ class CategoryItem extends React.Component {
         <h2>Name: {category.name}</h2>
         <h2>Budget: ${category.budget}</h2>
       </div>
-      <button onClick={() => categoryDestroy(category)}>delete</button>
+      <button className='delete' onClick={() => categoryDestroy(category)}>X</button>
     </div>;
     let renderJSX = this.state.editing ? editingJSX : contentJSX;
 

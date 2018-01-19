@@ -1,3 +1,4 @@
+import './_expense-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -51,7 +52,7 @@ class ExpenseForm extends React.Component {
         onSubmit={this.handleSubmit}
       >
 
-        <input
+        <textarea
           type='text'
           name='name'
           placeholder='name'
@@ -59,7 +60,7 @@ class ExpenseForm extends React.Component {
           onChange={this.handleNameChange}
         />
 
-        <input
+        <textarea
           type='number'
           name='price'
           placeholder='price'

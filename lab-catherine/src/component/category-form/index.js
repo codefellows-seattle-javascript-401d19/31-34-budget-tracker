@@ -1,3 +1,4 @@
+import './_category-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -41,13 +42,13 @@ class CategoryForm extends React.Component {
 
   render() {
     let buttonText = this.props.category ? 'update category' : 'create category';
-    let classNameGenerator = this.props.category ? 'update-category' : 'create-category';
+    // let classNameGenerator = this.props.category ? 'update-category' : 'create-category';
 
     return (
     
       <form
         onSubmit={this.handleSubmit}
-        className={classNameGenerator}>
+        className='category-form'>
 
         <input
           type='text'
