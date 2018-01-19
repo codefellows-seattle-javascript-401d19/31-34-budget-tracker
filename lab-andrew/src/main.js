@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
 import './style/reset.scss';
 import './style/main.scss';
@@ -8,9 +9,14 @@ import './style/main.scss';
 import App from './component/app';
 import reducer from './reducer';
 
+import session from './lib/redux-session';
+import reporter from './lib/redux-reporter';
+
 let store = createStore(
   reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools(
+    applyMiddleware(reporter, session)
+  )
 );
 
 store.subscribe(() => {
