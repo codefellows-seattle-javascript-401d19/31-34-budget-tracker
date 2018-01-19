@@ -1,5 +1,10 @@
 let emptyState = {};
 
+const validateExpense = (expense) => {
+  if (!expense.name) {
+    throw new Error('expense requires a name');
+  }
+};
 export default (state = emptyState, { type, payload }) => {
   let categoryID, categoryExpenses, updatedExpenses, updatedState;
 
@@ -13,6 +18,7 @@ export default (state = emptyState, { type, payload }) => {
       return updatedState;
 
     case 'EXPENSE_CREATE':
+      validateExpense(payload);
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
       updatedExpenses = [...categoryExpenses, payload];

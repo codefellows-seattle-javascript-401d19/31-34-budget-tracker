@@ -7,12 +7,12 @@ import reducer from './reducer';
 import './style/main.scss';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-let middleware = {};
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
+import session from './lib/redux-session';
+import reporter from './lib/redux-reporter';
 
-store.subscribe(() => {
-  console.log('__STATE__', store.getState());
-});
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(reporter, session)));
+
 
 const container = document.createElement('div');
 document.body.appendChild(container);
