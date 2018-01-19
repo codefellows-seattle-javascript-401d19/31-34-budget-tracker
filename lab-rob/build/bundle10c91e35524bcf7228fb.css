@@ -232,3 +232,13 @@ nav a {
   }
 }
 
+.category-complete h2,
+.category-complete h3 {
+  cursor: pointer;
+}
+
+.expense-item h3,
+.expense-item h4 {
+  cursor: pointer;
+}
+

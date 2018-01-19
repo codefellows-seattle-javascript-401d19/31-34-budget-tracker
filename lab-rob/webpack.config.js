@@ -6,7 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webPackConfig = module.exports = {};
 
 webPackConfig.entry = `${__dirname}/src/main.js`;
-
 webPackConfig.output = {
   filename: 'bundle.[hash].js',
   path: `${__dirname}/build`,
@@ -14,7 +13,10 @@ webPackConfig.output = {
 
 webPackConfig.plugins = [
   new HTMLPlugin(),
-  new ExtractTextPlugin('bundle.[hash].css'),
+  new ExtractTextPlugin({
+    filename: 'bundle[hash].css',
+    disable: process.env.NODE_ENV !== 'production',
+  }),
 ];
 
 webPackConfig.module = {
@@ -27,6 +29,7 @@ webPackConfig.module = {
     {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
         use: [
           'css-loader',
           'resolve-url-loader',
