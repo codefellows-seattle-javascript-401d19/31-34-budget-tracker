@@ -30,4 +30,6 @@ document.body.appendChild(container);
 ReactDom.render(
   <Provider store={store}>
     <App/>
-  </Provider>, container);
+  </Provider>,
+  container
+);

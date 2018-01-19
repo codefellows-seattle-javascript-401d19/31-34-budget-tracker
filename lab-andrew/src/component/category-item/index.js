@@ -40,29 +40,21 @@ class CategoryItem extends React.Component {
 
     const categoryExpenses = expenses[category.id];
     
-    const editing = [
+    const editing = <React.Fragment>
       <CategoryForm 
-        key={category.id + 1} 
         category={category} 
         onComplete={this.update}
-      />,
+      />
       <button 
-        key={category.id + 2} 
         className='delete-button' 
         onClick={() => categoryRemove(category)}>Delete This Category
-      </button>,
-    ];
+      </button>
+    </React.Fragment>;
 
-    const content = [
-      <h2 
-        key={category.id + 3} 
-        className='item-text'> {category.name}
-      </h2>,
-      <h2 
-        key={category.id + 4} 
-        className='item-text'> ${category.budget} 
-      </h2>,
-    ];
+    const content = <React.Fragment>
+      <h2 className='item-text'> {category.name} </h2>
+      <h2 className='item-text'> ${category.budget} </h2>
+    </React.Fragment>;
 
     const render = this.state.editing ? editing : content;
     const expenseForm = this.state.adding ? (

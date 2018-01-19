@@ -22,10 +22,11 @@ class ExpenseItem extends React.Component {
       expenseUpdate,
     } = this.props;
 
-    const content = [
-      <h4 key={expense.id}> {expense.name} </h4>,
-      <h4 key={expense.id + 1}> ${expense.amount} </h4>,
-    ];
+    const content = <React.Fragment>
+      <h4> {expense.name} </h4>
+      <h4> ${expense.amount} </h4>
+    </React.Fragment>;
+    
     const editing = <ExpenseForm expense={expense} onComplete={this.update}/>;
     const render = this.state.editing ? editing : content;
 
