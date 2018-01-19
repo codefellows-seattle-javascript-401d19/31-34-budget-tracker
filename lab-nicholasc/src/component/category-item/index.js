@@ -1,6 +1,11 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import ExpenseItem from '../expense-item';
+import ExpenseForm from '../expense-form';
 import CategoryForm from '../category-form';
+
+import * as expenseActions from '../../action/expense';
+import * as categoryActions from '../../action/category';
 
 class CategoryItem extends React.Component{
   render(){
