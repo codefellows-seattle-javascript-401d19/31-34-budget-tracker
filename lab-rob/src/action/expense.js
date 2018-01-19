@@ -25,3 +25,8 @@ export const clearAction = categoryId => ({
   type: 'EXPENSE_CLEAR',
   payload: categoryId,
 });
+
+export const reloadAction = expenses => ({
+  type: 'EXPENSE_RELOAD',
+  payload: expenses,
+});

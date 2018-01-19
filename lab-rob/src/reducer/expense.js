@@ -35,6 +35,8 @@ export default (state = emptyState, {type, payload}) => {
       return {...state, [categoryId]: updatedExpenses};
     case 'EXPENSE_CLEAR':
       return {...state, [payload]: []};
+    case 'EXPENSE_RELOAD':
+      return payload;
     default:
       return state;
   }

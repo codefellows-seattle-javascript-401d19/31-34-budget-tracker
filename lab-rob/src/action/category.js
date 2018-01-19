@@ -23,3 +23,8 @@ export const destroyAction = category => ({
 export const clearAction = () => ({
   type: 'CATEGORY_CLEAR',
 });
+
+export const reloadAction = catagories => ({
+  type: 'CATEGORY_RELOAD',
+  payload: catagories,
+});

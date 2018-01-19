@@ -10,6 +10,8 @@ export default (state = emptyState, {type, payload}) => {
       return state.filter(category => category.id !== payload.id);
     case 'CATEGORY_CLEAR':
       return emptyState;
+    case 'CATEGORY_RELOAD':
+      return payload;
     default:
       return state;
   }

@@ -23,11 +23,9 @@ class ExpenseItem extends React.Component {
   }
 }
 
-let mapStateToProps = () => ({});
-
 let mapDispatchToProps = dispatch => ({
   expenseUpdate: (data) => dispatch(updateAction(data)),
   expenseDestroy: (data) => dispatch(destroyAction(data)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExpenseItem);
+export default connect(null, mapDispatchToProps)(ExpenseItem);

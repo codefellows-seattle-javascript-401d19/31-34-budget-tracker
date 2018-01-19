@@ -8,10 +8,11 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 import App from './component/app';
 import reducer from './reducer';
+import reporter from './middleware/redux-reporter';
+import session from './middleware/redux-session';
 
-let middleware = {};
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(...middleware)
+  applyMiddleware(reporter, session)
 ));
 
 let container = document.createElement('main');

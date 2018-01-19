@@ -2,11 +2,23 @@ import './app.scss';
 
 import React from 'react';
 import {BrowserRouter, Route, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 import Landing from '../landing';
 import Dashboard from '../dashboard';
+import {reloadAction as categoryReload} from '../../action/category';
+import {reloadAction as expenseReload} from '../../action/expense';
 
 class App extends React.Component {
+  componentWillMount() {
+    if(localStorage.categories && localStorage.expenses) {
+      let categories = JSON.parse(localStorage.categories);
+      let expenses = JSON.parse(localStorage.expenses);
+      this.props.reloadCategories(categories);
+      this.props.reloadExpenses(expenses);
+    }
+  }
+
   render() {
     return (
       <div className='app'>
@@ -30,4 +42,9 @@ class App extends React.Component {
   }
 }
 
-export default App;
+let mapDispatchToProps = dispatch => ({
+  reloadCategories: (data) => dispatch(categoryReload(data)),
+  reloadExpenses: (data) => dispatch(expenseReload(data)),
+});
+
+export default connect(null, mapDispatchToProps)(App);
