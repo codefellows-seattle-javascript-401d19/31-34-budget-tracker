@@ -21,7 +21,7 @@ export default (state = emptyState, {type, payload}) => {
     case 'EXPENSE_UPDATE':
       categoryID = payload.categoryID
       categoryExpenses = state[categoryID]
-      updatedExpenses = categoryExpenses.map(expense => expense.id === payload.id ? payload : item)
+      updatedExpenses = categoryExpenses.map(expense => expense.id === payload.id ? payload : expense)
 
       return {...state, [categoryID] : updatedExpenses}
     case 'EXPENSE_REMOVE':

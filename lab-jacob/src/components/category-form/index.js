@@ -19,8 +19,9 @@ class CategoryForm extends React.Component{
   }
   
   handleChange(event){
-    let {name, value} = event.target
-    this.setState({[name]:value})
+    this.setState({
+      [event.target.name] : event.target.value,
+    })
   }
 
   handleSubmit(event){
@@ -35,12 +36,6 @@ class CategoryForm extends React.Component{
   }
 
   render(){
-    console.log('====================================');
-    console.log('THIS IS THE STATE IN THE CATEGORY FORM', this.state);
-    console.log('====================================');
-    console.log('====================================');
-    console.log('THIS IS THE PROPS IN THE CATEGORY FORM', this.props);
-    console.log('====================================');
     let buttonText = this.props.category ? 'update' : 'create'
 
     return(
