@@ -30,7 +30,6 @@ export default(state = emptyState, action) => {
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
       updatedExpenses = categoryExpenses.filter(expense => expense.id !== payload.id);
-      console.log(updatedExpenses);
       return {...state, [categoryID] : updatedExpenses};
 
     default:
