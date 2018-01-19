@@ -8,7 +8,7 @@ This program helps you track your budget for different categories of items and a
 4. follow the link provided see the webpage
 
 ## Methods
-  Use the 'Add category' button to add a new object with a category name and budget value. Use the 'Update category' button to make edits to a category's name or budget. Use the 'Delete category' button to remove a category and all of its expenses. For expenses use the 'Add expense' button to add an expense to a particular category, the 'Update expense' button to edit an expense, or the 'delete expense' button to remove an expense.
+  Use the 'Add category' button to add a new object with a category name and budget value. To update a category double click on the category name. Then use the 'Update category' button to make edits to a category's name or budget. Use the 'Delete category' button to remove a category and all of its expenses. For expenses use the 'Add expense' button to add an expense to a particular category or the 'delete expense' button to remove an expense. To update an expense double click on the expense, then use the 'Update expense' button to edit an expense.
 
 ## Technologies Used
   babel-core
