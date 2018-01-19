@@ -1,7 +1,7 @@
-401 JS --  Lab 31+32 Budget Tracker
+401 JS --  Lab 31+32+33 Budget Tracker
 ===
 
-* Simple budget tracker app that is build using React and Redux. Redux is used to manage state of the app, storing in single store. Category components are build with `id`, `name`, `timestamp` and `budget` props. Inside category component user can create expenses. Expense component are formatted in such way that they have reference to parent *category* via `categoryID` prop. Expenses also have unique `id`, `name` and `price` property. Once added to category - expense can be edited or deleted. 
+* Simple budget tracker app that is build using React and Redux. Redux is used to manage state of the app, storing in single store. Category components are build with `id`, `name`, `timestamp` and `budget` props. Inside category component user can create expenses. Expense component are formatted in such way that they have reference to parent *category* via `categoryID` prop. Expenses also have unique `id`, `name` and `price` property. Once added to category - expense can be edited or deleted. Double clicking on expense/category will allow user to edit them. 
 
 ## Code Style
 * Javascript ES6, JSX

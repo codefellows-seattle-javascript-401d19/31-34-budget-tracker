@@ -10,6 +10,18 @@ import * as expense from "../../action/expense";
 
 
 class CategoryItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { editing : false}
+
+    this.handleUpdate = this.handleUpdate.bind(this);
+  }
+
+  handleUpdate(category){
+    this.props.categoryUpdate(category);
+    this.setState({ editing : false });
+  }
+  
   render() {
     let {
       category, 
@@ -21,17 +33,26 @@ class CategoryItem extends React.Component {
 
     let categoryExpenses = expenses[category.id];
 
+    let editingJSX = <CategoryForm onComplete={this.handleUpdate} category={category} />;
+    let contentJSX =
+      <div onDoubleClick={() => this.setState({ editing : true })} >
+        <button className="delete" onClick={categoryDestroy.bind(null, category)}> delete </button>
+        <h2>{category.name}</h2>
+        <p>${category.budget}</p>
+      </div>
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
+
     return (
       <div className="category-item">
-        <button onClick={categoryDestroy.bind(null, category)}>Delete</button>
-        <p><strong>Category name: </strong>{category.name}</p>
-        <p><strong>Budget $: </strong>{category.budget}</p>
-        <CategoryForm onComplete={categoryUpdate} category={category} />
+        {renderJSX}
         <ExpenseForm onComplete={expenseCreate} category={category} />
-
-        {
-          categoryExpenses.map((expense, index) => <Expense expense={expense} key={index}/>)
-        }
+        <main className="expense-container">
+          {
+            categoryExpenses.map((expense, index) => 
+              <Expense expense={expense} key={index}/>
+            )
+          }
+        </main>
       </div>
     )
   }
