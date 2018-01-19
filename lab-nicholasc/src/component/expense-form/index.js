@@ -1,15 +1,16 @@
 import React from 'react';
 
 let emptyState = {
-  title: '',
+  name: '',
+  price: 0,
 };
 
-class CategoryForm extends React.Component{
+class ExpenseForm extends React.Component{
   constructor(props){
     super(props);
     this.state = this.props.category || emptyState;
 
-    let memberFunctions = Object.getOwnPropertyNames(CategoryForm.prototype);
+    let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
@@ -41,7 +42,7 @@ class CategoryForm extends React.Component{
     return(
       <form
         onSubmit = {this.handleSubmit}
-        className = "category-form">
+        className = "expense-form">
 
         <input
           type="text"
@@ -66,4 +67,4 @@ class CategoryForm extends React.Component{
   }
 }
 
-export default CategoryForm;
+export default ExpenseForm;

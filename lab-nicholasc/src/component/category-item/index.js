@@ -24,18 +24,35 @@ class CategoryItem extends React.Component{
     this.props.categoryUpdate(category);
     this.setState({editing : false});
   }
-  
+
   render(){
     let {
+      expenses,
+      expenseCreate,
       category,
       categoryRemove,
       categoryUpdate} = this.props;
 
+    let categoryExpenses = expenses[category.id];
+
+    let editingJSX = <CategoryForm category={category} handleComplete={this.handleUpdate} />;
+    let contentJSX =
+      <div>
+        <h2 onDoubleClick={() => this.setState({editing : true})}>{category.name} || budget: ${category.budget}</h2>
+        <button className="category-delete" onClick={() => categoryRemove(category)}> delete </button>
+      </div>;
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
+
     return(
-      <div key={category.id}>
-        <h2>{category.name} || budget: ${category.budget}</h2>
-        <button onClick={() => categoryRemove(category)}> delete </button>
-        <CategoryForm category={category} handleComplete={this.handleUpdate} />
+      <div className="category" key={category.id}>
+        {renderJSX}
+        <ExpenseForm category={category} handleComplete={expenseCreate} />
+        <div className="expense-container">
+          {
+            categoryExpenses.map((expense) => <ExpenseItem expense={expense} key={expense.id} />)
+          }
+        </div>
+
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import uuidv1 from 'uuid/v1';
 
-export const createAction = ({name, price, category}) => ({
+export const createAction = ({name, price, categoryID}) => ({
   type: 'EXPENSE_CREATE',
   payload : {
     name,
     price,
-    categoryID : category.id,
+    categoryID : categoryID,
     id: uuidv1(),
     timeStamp: new Date(),
   },
