@@ -39,7 +39,7 @@ let mapDispatchToProps = (dispatch) => {
   return{
     categoryCreate: (data) => dispatch(category.createAction(data)),
     categoryRemove: (data) => dispatch(category.removeAction(data)),
-    categoryUpdate: (data) => dispatch(category.updateAction(data))
+    categoryUpdate: (data) => dispatch(category.updateAction(data)),
   }
 }
 

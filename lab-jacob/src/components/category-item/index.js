@@ -4,6 +4,7 @@ import CategoryForm from '../category-form'
 import ExpenseForm from '../expense-form'
 import ExpenseItem from '../expense-item'
 import * as category from '../../action/categories'
+import * as expense from '../../action/expense'
 
 class CategoryItem extends React.Component{
   render(){
@@ -14,6 +15,7 @@ class CategoryItem extends React.Component{
       categoryRemove,
       name,
       price,
+      expenseCreate,
     } = this.props
 
   return (
@@ -26,7 +28,10 @@ class CategoryItem extends React.Component{
             category={category} 
             onComplete={categoryUpdate} />
        
-            <ExpenseForm />             
+            <ExpenseForm 
+            category={category}
+            onComplete={expenseCreate}
+            />             
           <button onClick={() => categoryRemove(category)}> Delete </button>
           </div>
         ))}
@@ -35,6 +40,10 @@ class CategoryItem extends React.Component{
 }
 }
 
+let mapStateToProps = (state) => ({
+  expense : state.expense,
+})
 
 
-export default CategoryItem
+
+export default connect(mapStateToProps,null)(CategoryItem)

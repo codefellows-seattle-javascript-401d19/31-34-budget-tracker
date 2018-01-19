@@ -1,13 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import expenseAction from '../../action/expense'
-
 
 class ExpenseForm extends React.Component{
   constructor(props) {
     super(props)
 
-    this.state = { name : '' , price : ''}
+    this.state = {
+      name: '',
+      price: '',
+    }
 
     let memberFunctions = Object.getOwnPropertyNames(ExpenseForm.prototype)
     for(let functionName of memberFunctions){
@@ -22,14 +23,30 @@ class ExpenseForm extends React.Component{
       [event.target.name] : event.target.value,
     })
   }
+  handleSubmit(event){
+    event.preventDefault()
+    let categoryID = this.props.category ? this.props.category.id : this.props.expense.categoryID
+
+    this.props.onComplete({
+      ...this.state,
+      categoryID,
+    })
+    this.setState(emptyState)
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.expense)
+      this.setState(nextProps.expense)
+  }
 
   render(){
-    let buttonText = this.props.expense ? 'update expense' : 'create'
+
+    let buttonText = this.props.expense ? 'update' : 'create'
 
     return(
       <form 
         type='expense-form'
-        onSubmit={() => this.props.handleSubmit(this.state)}
+        onSubmit={this.handleSubmit}
       >
       <input 
         type='text'
@@ -53,8 +70,8 @@ class ExpenseForm extends React.Component{
   }
 }
 
-let mapDispatchToProps = (dispatch) => ({
-  handleSubmit: expense => dispatch(expenseAction(expense))
+let mapStateToProps = (state) => ({
+  expense : state.expense
 })
 
-export default connect(null, mapDispatchToProps)(ExpenseForm)
+export default connect(mapStateToProps, null)(ExpenseForm)
