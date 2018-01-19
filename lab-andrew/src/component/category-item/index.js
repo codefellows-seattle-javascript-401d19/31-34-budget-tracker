@@ -9,6 +9,26 @@ import * as categoryActions from '../../action/category';
 
 
 class CategoryItem extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      editing: false,
+      adding: false,
+    };
+    this.update = this.update.bind(this);
+    this.createExpense = this.createExpense.bind(this);
+  }
+
+  update(category){
+    this.props.categoryUpdate(category);
+    this.setState({editing: false});
+  }
+
+  createExpense(expense) {
+    this.props.expenseCreate(expense);
+    this.setState({adding: false});
+  }
+
   render() {
     const {
       expenses,
@@ -19,17 +39,51 @@ class CategoryItem extends React.Component {
     } = this.props;
 
     const categoryExpenses = expenses[category.id];
-    const header = categoryExpenses.length ? <h2>Current Expenses:</h2> : null;
+    
+    const editing = [
+      <CategoryForm 
+        key={category.id + 1} 
+        category={category} 
+        onComplete={this.update}
+      />,
+      <button 
+        key={category.id + 2} 
+        className='delete-button' 
+        onClick={() => categoryRemove(category)}>Delete This Category
+      </button>,
+    ];
 
+    const content = [
+      <h2 
+        key={category.id + 3} 
+        className='item-text'> {category.name}
+      </h2>,
+      <h2 
+        key={category.id + 4} 
+        className='item-text'> ${category.budget} 
+      </h2>,
+    ];
+
+    const render = this.state.editing ? editing : content;
+    const expenseForm = this.state.adding ? (
+      <ExpenseForm 
+        category={category} 
+        onComplete={this.createExpense}
+      />
+    ) : (
+      <button 
+        className='add-expense-button' 
+        onClick={() => this.setState({ adding: true })}>Add Expense
+      </button>
+    );
+    const header = categoryExpenses.length ? <h2>Current Expenses:</h2> : null;
 
     return(
       <div className='category-item'>
-        <h2 className='item-text'> {category.name} </h2>
-        <h2 className='item-text'> ${category.budget} </h2>
-        <CategoryForm category={category} onComplete={categoryUpdate} />
-        <button className='delete-button' onClick={() => categoryRemove(category)}>Delete This Category</button>
-        <h3>Add Expense</h3>
-        <ExpenseForm category={category} onComplete={expenseCreate} />
+        <main onDoubleClick={() => this.setState({ editing: true })}>
+          {render}
+        </main>
+        {expenseForm}
         {header}
         {
           categoryExpenses.map(expense =>

@@ -14,19 +14,20 @@ class ExpenseItem extends React.Component {
     this.props.expenseUpdate(expense);
     this.setState({editing: false});
   }
+
   render() {
-    let {
+    const {
       expense,
       expenseRemove,
       expenseUpdate,
     } = this.props;
 
-    let content = [
+    const content = [
       <h4 key={expense.id}> {expense.name} </h4>,
       <h4 key={expense.id + 1}> ${expense.amount} </h4>,
     ];
-    let editing = <ExpenseForm expense={expense} onComplete={this.update}/>;
-    let render = this.state.editing ? editing : content;
+    const editing = <ExpenseForm expense={expense} onComplete={this.update}/>;
+    const render = this.state.editing ? editing : content;
 
     return (
       <div className='expense'>
@@ -37,7 +38,6 @@ class ExpenseItem extends React.Component {
       </div>
     );
   }
-
 }
 
 let mapDispatchToProps = dispatch => ({
