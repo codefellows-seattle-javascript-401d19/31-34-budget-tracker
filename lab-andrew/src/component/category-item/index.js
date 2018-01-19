@@ -65,14 +65,14 @@ class CategoryItem extends React.Component {
     ) : (
       <button 
         className='add-expense-button' 
-        onClick={() => this.setState({ adding: true })}>Add Expense
+        onClick={() => this.setState({adding: true})}>Add Expense
       </button>
     );
     const header = categoryExpenses.length ? <h2>Current Expenses:</h2> : null;
 
     return(
       <div className='category-item'>
-        <main onDoubleClick={() => this.setState({ editing: true })}>
+        <main onDoubleClick={() => this.setState({editing: true})}>
           {render}
         </main>
         {expenseForm}

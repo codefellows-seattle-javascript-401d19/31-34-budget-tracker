@@ -7,7 +7,7 @@ import * as categoryAction from '../../action/category';
 class Dashboard extends React.Component {
   render() {
     let {
-      categories: categories,
+      categories,
       categoryCreate,
       categoryUpdate,
       categoryRemove,
