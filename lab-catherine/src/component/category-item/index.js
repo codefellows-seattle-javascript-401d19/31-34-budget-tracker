@@ -7,25 +7,46 @@ import ExpenseItem from '../expense-item';
 import ExpenseForm from '../expense-form';
 
 class CategoryItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {editing: false};
+
+    let memberFunctions = Object.getOwnPropertyNames(CategoryItem.prototype);
+    for(let functionName of memberFunctions) {
+      if(functionName.startsWith('handle')) {
+        this[functionName] = this[functionName].bind(this);
+      }
+    }
+  }
+
+  handleUpdate(category) {
+    this.props.categoryUpdate(category);
+    this.setState({editing: false});
+  }
+
   render() {
     let {category, categoryDestroy, categoryUpdate, expenses, expenseCreate} = this.props;
 
     let categoryExpenses = expenses[category.id];
 
+    let editingJSX = <CategoryForm category={category} onComplete={this.handleUpdate} />;
+    let contentJSX =
+    <div className='new-item'>
+      <div onDoubleClick={() => this.setState({editing: true})} className='headers'>
+        <h2>Name: {category.name}</h2>
+        <h2>Budget: ${category.budget}</h2>
+      </div>
+      <button onClick={() => categoryDestroy(category)}>delete</button>
+    </div>;
+    let renderJSX = this.state.editing ? editingJSX : contentJSX;
+
     return (
       <div className='category-item'>
-        <CategoryForm category={category} onComplete={categoryUpdate} />
-        <div className='new-item'>
-          <div className='headers'>
-            <h2>Name: {category.name}</h2>
-            <h2>Budget: ${category.budget}</h2>
-          </div>
-          <button onClick={() => categoryDestroy(category)}>delete</button>
-          <ExpenseForm category={category} onComplete={expenseCreate} />
-          {
-            categoryExpenses.map((expense, index) => <ExpenseItem  key={index} expense={expense} />
-            )}
-        </div>
+        {renderJSX}
+        <ExpenseForm category={category} onComplete={expenseCreate} />
+        {
+          categoryExpenses.map((expense, index) => <ExpenseItem  key={index} expense={expense} />
+          )}
       </div>
     );
   }
