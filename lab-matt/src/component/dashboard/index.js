@@ -6,10 +6,10 @@ import CategoryItem from '../category-item';
 
 class Dashboard extends React.Component {
   render() {
-    let { categories, categoryCreate } = this.props;
+    let { categories } = this.props;
     return (
       <div className='dashboard'>
-        <CategoryForm onComplete={categoryCreate} />
+        <CategoryForm onComplete={this.handleSubmit} />
         {
           categories.map((category, index) => {
             return <div key={index}>

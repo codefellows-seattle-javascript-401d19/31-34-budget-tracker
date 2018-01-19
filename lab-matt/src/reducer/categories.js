@@ -1,6 +1,13 @@
-const emptyState = [];
+let emptyState;
+try {
+  emptyState = JSON.parse(localStorage.categories) || {};
+  console.log('__LOCALSTORAGE__ categories retrieved');
+} catch(e) {
+  emptyState = [];
+}
 
-export default (state = emptyState, { type, payload }) => {
+export default (state = emptyState, action) => {
+  let { type, payload } = action;
   switch (type) {
     case 'CATEGORY_CREATE':
       return [...state, payload];

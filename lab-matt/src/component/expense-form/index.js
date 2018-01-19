@@ -59,7 +59,7 @@ class ExpenseForm extends React.Component {
           onChange={this.handleChange} 
           type="text" 
           name='title' 
-          placeholder='title' 
+          placeholder='expense title' 
           value={this.state.title} 
         />
 

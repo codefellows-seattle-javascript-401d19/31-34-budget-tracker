@@ -1,6 +1,13 @@
-const emptyState = {};
+let emptyState;
+try {
+  emptyState = JSON.parse(localStorage.expenses) || {};
+  console.log('__LOCALSTORAGE__ expenses retrieved');
+} catch(e) {
+  emptyState = {};
+}
 
-export default (state = emptyState, { type, payload }) => {
+export default (state = emptyState, action) => {
+  let { type, payload } = action;
   let updatedState, categoryID, categoryExpenses, updatedExpenses;
   
   switch (type) {
@@ -31,7 +38,7 @@ export default (state = emptyState, { type, payload }) => {
       updatedExpenses = categoryExpenses.filter(
         expense => expense.id !== payload.id);
       return {...state, [categoryID] : updatedExpenses};
-      
+
     default:
       return state;
   }
