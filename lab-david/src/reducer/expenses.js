@@ -23,14 +23,14 @@ export default(state = emptyState, action) => {
     case 'EXPENSE_UPDATE':
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
-      console.log('HI WE HERE', payload);
       updatedExpenses = categoryExpenses.map(expense => expense.id === payload.id ? payload : expense);
       return {...state, [categoryID] : updatedExpenses};
 
-    case 'EXPENSE_REMOVE':
+    case 'EXPENSE_DELETE':
       categoryID = payload.categoryID;
       categoryExpenses = state[categoryID];
-      updatedExpenses = categoryExpenses.filter(expense => expense.id === payload.id ? payload : expense);
+      updatedExpenses = categoryExpenses.filter(expense => expense.id !== payload.id);
+      console.log(updatedExpenses);
       return {...state, [categoryID] : updatedExpenses};
 
     default:
