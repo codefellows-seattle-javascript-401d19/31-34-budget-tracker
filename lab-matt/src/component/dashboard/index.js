@@ -12,9 +12,7 @@ class Dashboard extends React.Component {
         <CategoryForm onComplete={categoryCreate} />
         {
           categories.map((category, index) => {
-            return <div key={index}>
-              <CategoryItem category={category} />
-            </div>;
+            return <CategoryItem key={index} category={category} />;
           })
         }
       </div>

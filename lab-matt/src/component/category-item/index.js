@@ -38,12 +38,12 @@ class CategoryItem extends React.Component {
     let categoryExpenseList = expenses[category.id];
     let title = category.title !== '' ? category.title : `'no title'`;
 
-    let editingJSX =  <div ref={this.setRef}>
+    let editingJSX =  <div ref={this.setRef} >
       <CategoryForm category={category} onComplete={this.handleForm} />
     </div>;
-    let contentJSX = <div>
+    let contentJSX = <div className='header'>
       <h2 onClick={this.openForm}> {title} </h2>
-      <button onClick={() => categoryRemove(category)}> delete </button>
+      <button onClick={() => categoryRemove(category)}> X </button>
     </div>;
     let renderJSX = this.state.editing ? editingJSX : contentJSX;
 
