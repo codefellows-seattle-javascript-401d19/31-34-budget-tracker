@@ -1,5 +1,4 @@
-// 'use strict';
-
+import './style/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
@@ -9,7 +8,14 @@ import App from './component/app';
 import reducer from './reducer';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
-let middleware = {};
+import session from './lib/redux-session';
+import reporter from './lib/redux-reporter';
+
+let middleware = {
+  session,
+  reporter,
+};
+
 let store = createStore(reducer, composeWithDevTools(
   applyMiddleware(...middleware)
 ));

@@ -1,3 +1,4 @@
+import './_category-form.scss';
 import React from 'react';
 
 let emptyState = {
@@ -46,7 +47,7 @@ class CategoryForm extends React.Component{
         <input
           type="text"
           name="name"
-          placeholder="name"
+          placeholder="category name"
           value={this.state.name}
           onChange={this.handleChange}
           required={true}
@@ -54,7 +55,7 @@ class CategoryForm extends React.Component{
         <input
           type="number"
           name="budget"
-          placeholder="$0"
+          placeholder="budget"
           value={this.state.budget}
           onChange={this.handleChange}
           required={true}
