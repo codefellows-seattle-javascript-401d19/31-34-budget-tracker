@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a budget tracker app. A new budget can be created with the form on the home page. This will add a new budget to the list of budgets. The budget will have an update form attached which allows a user to update that budget. There will also be a delete button to delete this budget category. Each budget category can have expenses added. Within each category will be a form where one can add expenses. Also within the category will be a list of expenses, each of which can be updated or deleted.
+This is a budget tracker app. A new budget can be created with the form on the home page. This will add a new budget to the list of budgets. The budget will have an update form attached which allows a user to update that budget. There will also be a delete button to delete this budget category. Each budget category can have expenses added. Within each category will be a form where one can add expenses. Also within the category will be a list of expenses, each of which can be updated or deleted. To edit any section, double-click on that section, and a form to update the text or amount will appear.
 
 ***
 ## Getting Started
