@@ -18,7 +18,7 @@ class ExpenseItem extends React.Component {
       this.reference = node;
     };
     this.handleClickOutside = (event) => {
-      if (this.reference && !this.reference.contains(event.target)) {
+      if (!this.reference.contains(event.target)) {
         this.setState({ editing : false });
         document.removeEventListener('mousedown', this.handleClickOutside);
       }
