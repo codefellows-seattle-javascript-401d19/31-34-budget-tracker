@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-// import './style/main.scss';
-
+import reducer from './reducer';
 import App from './component/app';
-import categoriesReducer from './reducer/categories.js';
+// import './style/main.scss';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-let store = createStore(categoriesReducer);
+let middleware = {};
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middleware)));
 
 store.subscribe(() => {
   console.log('__STATE__', store.getState());
