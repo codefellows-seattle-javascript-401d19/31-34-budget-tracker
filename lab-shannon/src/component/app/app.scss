@@ -1,0 +1,13 @@
+$backgroundColor : #B3E5FC;
+$fontColor : #01579B;
+
+body{
+  margin: 4em;
+  background-color: $backgroundColor;
+  color: $fontColor;
+}
+
+.budgetHeading{
+  text-align: center;
+  font-size: 3.5em;
+}
