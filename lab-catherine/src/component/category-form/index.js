@@ -19,14 +19,12 @@ class CategoryForm extends React.Component {
     }
   }
 
-  handleNameChange(event) {
-    let {value} = event.target;
-    this.setState({name: value});
+  handleNameChange({target: { value: name }}) {
+    this.setState({ name });
   }
 
-  handleBudgetChange(event) {
-    let {value} = event.target;
-    this.setState({budget: value});
+  handleBudgetChange({target: { value: budget }}) {
+    this.setState({ budget });
   }
 
   handleSubmit(event) {
@@ -41,29 +39,35 @@ class CategoryForm extends React.Component {
   }
 
   render() {
+    const {
+      handleSubmit,
+      handleNameChange,
+      handleBudgetChange,
+      state: {name, budget},
+    } = this;
+
     let buttonText = this.props.category ? 'update category' : 'create category';
-    // let classNameGenerator = this.props.category ? 'update-category' : 'create-category';
 
     return (
     
       <form
-        onSubmit={this.handleSubmit}
+        onSubmit={handleSubmit}
         className='category-form'>
 
         <input
           type='text'
           name='name'
           placeholder='name'
-          value={this.state.name}
-          onChange={this.handleNameChange}
+          value={name}
+          onChange={handleNameChange}
         />
 
         <input
           type='number'
           name='budget'
           placeholder='budget'
-          value={this.state.budget}
-          onChange={this.handleBudgetChange}
+          value={budget}
+          onChange={handleBudgetChange}
         />
         <button type='submit'>{buttonText}</button>
       </form>
